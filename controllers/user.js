@@ -10,7 +10,7 @@ async function handleUserSignup(req, res) {
     rollNo,
     password,
   });
-  return res.redirect("/");
+  return res.redirect("/login");
 }
 
 async function handleUserLogin(req, res) {

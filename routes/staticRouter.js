@@ -4,8 +4,8 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   if (!req.user) return res.redirect("/login");
-  const name = req.user.name;
-  return res.render("home", { name });
+  const user = req.user;
+  return res.render("home", { name: user.name });
 });
 
 router.get("/signup", (req, res) => {

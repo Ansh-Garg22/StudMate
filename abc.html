@@ -9,6 +9,240 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+      * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background: #dfe9f5;
+        background-image: url("https://images.pexels.com/photos/2114014/pexels-photo-2114014.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+      }
+      nav {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        height: 100vh;
+        left: 0;
+        background: #fff;
+        width: 380px;
+        overflow: hidden;
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+      }
+      .logo {
+        text-align: center;
+        display: flex;
+        margin: 10px 0 0 10px;
+      }
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+      }
+      .logo span {
+        font-weight: bold;
+        padding-left: 15px;
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+      a {
+        position: relative;
+        color: rgb(85, 83, 83);
+        font-size: 14px;
+        display: table;
+        width: 280px;
+        padding: 10px;
+      }
+      nav .fas {
+        position: relative;
+        width: 70px;
+        height: 40px;
+        top: 14px;
+        font-size: 20px;
+        text-align: center;
+      }
+      .nav-item {
+        position: relative;
+        top: 12px;
+        margin-left: 10px;
+      }
+      a:hover {
+        background: #eee;
+      }
+      .logout {
+        position: absolute;
+        bottom: 0;
+      }
+
+      /* Attendance Section */
+      .attendance {
+        margin-top: 0rem;
+        padding: 0.6rem 1.5rem 1.5rem 1.5rem;
+        border-radius: 3px;
+        border: 0.3px solid rgb(188, 183, 183);
+        width: 90%;
+      }
+
+      .attendance h1 {
+        font-size: 2.3rem;
+        font-weight: bold;
+        margin-bottom: 0.78rem;
+      }
+
+      .subjects {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .subjects > div {
+        width: 30%;
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 10px 10px 10px 10px rgba(164, 141, 141, 0.849);
+        transition: box-shadow 0.3s ease;
+        height: 50vmin;
+      }
+
+      .subjects > div:hover {
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.97);
+        transition: box-shadow 0.3s ease;
+      }
+
+      .subjects > div .material-icons-sharp {
+        font-size: 1.5rem;
+        color: #093fd3;
+      }
+
+      .subjects > div h3 {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        color: #333; /* Adjust text color as needed */
+      }
+
+      .subjects > div h2 {
+        font-size: 1rem;
+        margin: 1.2rem 0 0.75rem 0;
+        color: #333; /* Adjust text color as needed */
+      }
+
+      .progress-ring {
+        width: 85px;
+        height: 85px;
+        margin-left: 1rem;
+      }
+
+      .progress-ring-circle {
+        fill: none;
+        stroke: #873ce3; /* Change color as needed */
+        stroke-width: 8;
+        stroke-dasharray: 200; /* Circumference of the circle (2 * π * r) */
+        stroke-dashoffset: 0; /* Start the stroke at the beginning */
+        transition: stroke-dashoffset 0.35s;
+      }
+
+      .progress-100 .progress-ring-circle {
+        stroke-dashoffset: 0; /* Filled circle */
+      }
+
+      .progress-75 .progress-ring-circle {
+        stroke-dashoffset: 50; /* 25% of the circumference */
+      }
+
+      .progress-50 .progress-ring-circle {
+        stroke-dashoffset: 100; /* 50% of the circumference */
+      }
+
+      .progress-25 .progress-ring-circle {
+        stroke-dashoffset: 150 150; /* 75% of the circumference */
+      }
+
+      .subjects > div small {
+        display: block;
+        margin-top: 1rem;
+        color: #708db0;
+      }
+
+      /* Announcement section */
+
+      .right {
+        padding: 2.5rem;
+        border-radius: 3px;
+
+        border: 0.3px solid rgb(188, 183, 183);
+      }
+
+      .right .announcements h2 {
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+      }
+      .right .announcements .updates {
+        border-radius: 12px; /* Adjust border radius as needed */
+        box-shadow: 10px 10px 10px 10px rgba(164, 141, 141, 0.849);
+        transition: box-shadow 0.3s ease;
+        background-color: #f6f6f9;
+        padding: 2rem;
+        border-radius: 20px;
+      }
+      .right .announcements .updates:hover {
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.97); /* Add box shadow */
+        transition: box-shadow 0.3s ease;
+      }
+      .right .announcements .updates .message {
+        gap: 1rem;
+        line-height: 1.5;
+        padding: 0.5rem 0;
+      }
+
+      /* ...leaves... */
+
+      .right .leaves {
+        margin-top: 1.8rem;
+      }
+
+      .right .leaves h2 {
+        margin-bottom: 0.8rem;
+      }
+
+      .right .leaves .teacher {
+        background: var(--color-white);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.7rem;
+        border-radius: 12px; /* Adjust border radius as needed */
+        background-color: #f6f6f9;
+        padding: 2px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 10px 10px rgba(164, 141, 141, 0.849);
+        transition: box-shadow 0.3s ease;
+      }
+
+      .profile-photo1 {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        object-fit: cover; /* Ensures the image fills the container */
+        object-position: center; /* Centers the image within the container */
+      }
+      .right .leaves .teacher:hover {
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.97); /* Add box shadow */
+        transition: box-shadow 0.3s ease;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -113,35 +347,28 @@
             <small class="text-muted">Last 24 Hours</small>
           </div>
 
-
           <div class="cs">
             <span class="material-icons-sharp">Scripting Language</span>
             <h3>Attendance Ratio</h3>
             <h2>20/30</h2>
             <div class="progress">
-                <svg class="progress-ring" viewBox="0 0 80 80">
-                    <circle
-                      class="progress-ring-circle"
-                      cx="40"
-                      cy="40"
-                      r="34"
-                      style="stroke-dasharray: 150; transform:rotate(-90);" 
-
-
-                    ></circle>
-                    <text x="32%" y="52%" style="font-size: 14px">66%</text>
-                  </svg>
+              <svg class="progress-ring" viewBox="0 0 80 80">
+                <circle
+                  class="progress-ring-circle"
+                  cx="40"
+                  cy="40"
+                  r="34"
+                  style="stroke-dasharray: 150; transform: rotate(-90)"
+                ></circle>
+                <text x="32%" y="52%" style="font-size: 14px">66%</text>
+              </svg>
             </div>
             <small class="text-muted">Last 24 Hours</small>
-        </div>
+          </div>
         </div>
       </div>
 
-
-
-
       <div class="right">
-
         <div class="announcements">
           <h2>Announcements</h2>
           <div class="updates">
@@ -164,26 +391,34 @@
             </div>
           </div>
 
-
           <div class="leaves">
             <h2>Teachers on leave</h2>
             <div class="teacher">
-                <img src="https://tse2.mm.bing.net/th?id=OIP.AJccaqqfgF0gUTAOl9i8gAHaFo&pid=Api&P=0&h=180" />
-              
+              <img
+                src="https://tse2.mm.bing.net/th?id=OIP.AJccaqqfgF0gUTAOl9i8gAHaFo&pid=Api&P=0&h=180"
+              />
+
               <div class="info">
                 <h3>The Professor</h3>
                 <small class="text-muted">Full Day</small>
               </div>
             </div>
             <div class="teacher">
-                <img src="https://www.nawpic.com/media/2020/cute-dog-nawpic-9-e1609617185188.jpg" id="profile-photo1" alt="" />
+              <img
+                src="https://www.nawpic.com/media/2020/cute-dog-nawpic-9-e1609617185188.jpg"
+                id="profile-photo1"
+                alt=""
+              />
               <div class="info">
                 <h3>Lisa Manobal</h3>
                 <small class="text-muted">Half Day</small>
               </div>
             </div>
             <div class="teacher">
-                <img src="https://tse2.mm.bing.net/th?id=OIP.wXMw8d6a2PtkWdSUa4GcKQHaFI&pid=Api&P=0&h=180" alt="" />
+              <img
+                src="https://tse2.mm.bing.net/th?id=OIP.wXMw8d6a2PtkWdSUa4GcKQHaFI&pid=Api&P=0&h=180"
+                alt=""
+              />
               <div class="info">
                 <h3>Himanshu Jindal</h3>
                 <small class="text-muted">Full Day</small>

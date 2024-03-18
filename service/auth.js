@@ -5,6 +5,7 @@ function setUser(user) {
   return jwt.sign(
     {
       _id: user._id,
+      name: user.name,
       email: user.email,
     },
     secret
@@ -12,14 +13,14 @@ function setUser(user) {
 }
 
 function getUser(token) {
-    try {
-      if (!token) return null;
-      return jwt.verify(token, secret);
-    } catch (error) {
-      console.error("Error while decoding JWT:", error.message);
-      return null;
-    }
+  try {
+    if (!token) return null;
+    return jwt.verify(token, secret);
+  } catch (error) {
+    console.error("Error while decoding JWT:", error.message);
+    return null;
   }
+}
 module.exports = {
   setUser,
   getUser,

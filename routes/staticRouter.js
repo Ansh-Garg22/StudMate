@@ -16,4 +16,7 @@ router.get("/login", (req, res) => {
   return res.render("logsi");
 });
 
+router.get("/feedback",(req,res)=>{
+  return res.render("feedback");
+});
 module.exports = router;

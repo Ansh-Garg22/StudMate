@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="feedback-form">
+        <h2>Feedback Form</h2>
+        <form id="feedbackForm" action="/feedback-s" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label>Share your experience in scaling</label>
+                <div class="rating">
+                    <input type="radio" id="worst" name="rating" value="worst">
+                    <label for="worst">😣</label>
+                    <input type="radio" id="notGood" name="rating" value="notGood">
+                    <label for="notGood">😐</label>
+                    <input type="radio" id="fine" name="rating" value="fine">
+                    <label for="fine">😊</label>
+                    <input type="radio" id="lookGood" name="rating" value="lookGood">
+                    <label for="lookGood">😀</label>
+                    <input type="radio" id="veryGood" name="rating" value="veryGood">
+                    <label for="veryGood">😍</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Add your comments..."></textarea>
+            </div>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>

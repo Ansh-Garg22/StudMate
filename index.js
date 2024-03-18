@@ -1,9 +1,9 @@
 const express = require("express");
 const path = require("path");
-
+const cookieParser = require("cookie-parser");
 const userRoute = require("./routes/user");
 const staticRoute = require("./routes/staticRouter");
-
+const { checkAuth } = require("./middlewares/auth");
 const { connectToMongoDb } = require("./connect");
 //variables
 const PORT = 8000;
@@ -21,12 +21,13 @@ app.set("views", path.resolve("./views"));
 //middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 app.use("/user", userRoute);
-app.use("/", staticRoute);
+app.use("/", checkAuth, staticRoute);
 
 //routes
-app.use("/user", userRoute);
+// app.use("/user", userRoute);
 
 app.get("/about", (req, res) => {
   res.end("hello about is running :)");

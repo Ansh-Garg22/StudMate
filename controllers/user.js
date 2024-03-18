@@ -1,6 +1,6 @@
-// const { v4: uuidv4 } = require("uuid");
+const { v4: uuidv4 } = require("uuid");
 const User = require("../models/user");
-// const { setUser } = require("../service/auth");
+const { setUser } = require("../service/auth");
 
 async function handleUserSignup(req, res) {
   const { name, email, rollNo, password } = req.body;
@@ -15,16 +15,18 @@ async function handleUserSignup(req, res) {
 
 async function handleUserLogin(req, res) {
   const { email, rollNo, password } = req.body;
-  console.log(req.body);
+  
   const user = await User.findOne({ email, rollNo, password });
 
-  console.log("User found:", user); // Log the user object
+  // console.log("User found:", user); 
 
   if (!user)
     return res.render("logsi", {
       error: "Invalid User",
     });
-
+  
+  const token=setUser(user);
+  res.cookie("uid", token);
   return res.redirect("/");
 }
 

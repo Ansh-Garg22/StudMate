@@ -6,6 +6,9 @@
     <title>HOME</title>
 </head>
 <body>
-    <h1>YOU are at HOME page</h1>
+    <% if (locals.name) { %>
+        <p>WELCOME <%= name%></p>
+        <% } %>
+    <!-- <h1>Welcome, <%= name %>!</h1> -->
 </body>
 </html>

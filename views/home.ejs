@@ -1,27 +1,15 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HOME</title>
-  </head>
-  <body>
-    
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Student Management Dashboard</title>
-    <link rel="stylesheet" href="abc.css" />
+
     <!-- Font Awesome CDN Link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/home.css" />
   </head>
   <body>
     <% if (locals.name) { %>
@@ -82,7 +70,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="logout">
+            <a href="/logout" class="logout">
               <i class="fas fa-sign-out-alt"></i>
               <span class="nav-item">Log out</span>
             </a>

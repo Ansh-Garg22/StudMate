@@ -15,22 +15,26 @@ async function handleUserSignup(req, res) {
 
 async function handleUserLogin(req, res) {
   const { email, rollNo, password } = req.body;
-  
+
   const user = await User.findOne({ email, rollNo, password });
 
-  // console.log("User found:", user); 
+  // console.log("User found:", user);
 
   if (!user)
     return res.render("logsi", {
       error: "Invalid User",
     });
-  
-  const token=setUser(user);
+
+  const token = setUser(user);
   res.cookie("uid", token);
   return res.redirect("/");
 }
-
+async function logoutfunc(req, res) {
+  res.cookie("uid", "", { maxAge: 1 });
+  res.redirect("/login");
+}
 module.exports = {
   handleUserSignup,
   handleUserLogin,
+  logoutfunc,
 };

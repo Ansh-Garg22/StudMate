@@ -1,5 +1,5 @@
 const express = require("express");
-
+const { logoutfunc } = require("../controllers/user");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -15,8 +15,8 @@ router.get("/signup", (req, res) => {
 router.get("/login", (req, res) => {
   return res.render("logsi");
 });
-
-router.get("/feedback",(req,res)=>{
+router.get("/logout", logoutfunc);
+router.get("/feedback", (req, res) => {
   return res.render("feedback");
 });
 module.exports = router;

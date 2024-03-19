@@ -1,5 +1,9 @@
 const express = require("express");
 const { logoutfunc } = require("../controllers/user");
+const {
+  restrictToLoggedinUserOnly,
+  checkAuth,
+} = require("../middlewares/auth");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -16,7 +20,7 @@ router.get("/login", (req, res) => {
   return res.render("logsi");
 });
 router.get("/logout", logoutfunc);
-router.get("/feedback", (req, res) => {
+router.get("/feedback", restrictToLoggedinUserOnly, (req, res) => {
   return res.render("feedback");
 });
 module.exports = router;

@@ -1,16 +1,16 @@
 const { getUser } = require("../service/auth");
 
-// async function restrictToLoggedinUserOnly(req, res, next) {
-//   const userUid = req.cookies?.uid;
+async function restrictToLoggedinUserOnly(req, res, next) {
+  const userUid = req.cookies?.uid;
 
-//   if (!userUid) return res.render("logsi");
-//   const user = getUser(userUid);
+  if (!userUid) return res.render("logsi");
+  const user = getUser(userUid);
 
-//   if (!user) return res.render("logsi");
+  if (!user) return res.render("logsi");
 
-//   req.user = user;
-//   next();
-// }
+  req.user = user;
+  next();
+}
 
 async function checkAuth(req, res, next) {
   const userUid = req.cookies?.uid;
@@ -22,5 +22,6 @@ async function checkAuth(req, res, next) {
 }
 
 module.exports = {
+  restrictToLoggedinUserOnly,
   checkAuth,
 };

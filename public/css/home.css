@@ -1,231 +1,234 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
-      * {
-        margin: 0;
-        padding: 0;
-        outline: none;
-        border: none;
-        text-decoration: none;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
-      body {
-        background: #dfe9f5;
-        background-image: url("https://images.pexels.com/photos/2114014/pexels-photo-2114014.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      .container {
-        display: flex;
-        height: 100vh;
-      }
-      nav {
-        position: relative;
-        top: 0;
-        bottom: 0;
-        height: 100vh;
-        left: 0;
-        background: #fff;
-        width: 380px;
-        overflow: hidden;
-        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-      }
-      .logo {
-        text-align: center;
-        display: flex;
-        margin: 10px 0 0 10px;
-      }
-      img {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-      }
-      .logo span {
-        font-weight: bold;
-        padding-left: 15px;
-        font-size: 18px;
-        text-transform: uppercase;
-      }
-      a {
-        position: relative;
-        color: rgb(85, 83, 83);
-        font-size: 14px;
-        display: table;
-        width: 280px;
-        padding: 10px;
-      }
-      nav .fas {
-        position: relative;
-        width: 70px;
-        height: 40px;
-        top: 14px;
-        font-size: 20px;
-        text-align: center;
-      }
-      .nav-item {
-        position: relative;
-        top: 12px;
-        margin-left: 10px;
-      }
-      a:hover {
-        background: #eee;
-      }
-      .logout {
-        position: absolute;
-        bottom: 0;
-      }
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #D9EDBF;
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+.named {
+  padding-inline-start: 20px;
+  padding-block-end: 10px;
+}
+nav {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  min-height: 100vh;
+  left: 0;
+  background: #fff;
+  width: 380px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  text-align: center;
+  display: flex;
+  margin: 10px 0 30px 10px;
+}
+img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.logo span {
+  font-weight: bold;
+  padding-left: 1px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+a {
+  position: relative;
+  color: rgb(42, 41, 41);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 5px;
+}
+nav .fas {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  top: 3px;
+  font-size: 20px;
+  text-align: center;
+}
 
-      /* Attendance Section */
-      .attendance {
-        margin-top: 0rem;
-        padding: 0.6rem 1.5rem 1.5rem 1.5rem;
-        border-radius: 3px;
-        border: 0.3px solid rgb(188, 183, 183);
-        width: 90%;
-      }
+.nav-item {
+  position: relative;
+  top: 3px;
+  margin-left: 10px;
+}
+a:hover {
+  background: #eee;
+}
+.logout {
+  position: absolute;
+  bottom: 200px;
+}
 
-      .attendance h1 {
-        font-size: 2.3rem;
-        font-weight: bold;
-        margin-bottom: 0.78rem;
-      }
+/* Attendance Section */
+.attendance {
+  margin-top: 0rem;
+  padding: 0.6rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 3px;
+  border: 0.3px solid rgb(188, 183, 183);
+  width: 90%;
+}
 
-      .subjects {
-        display: flex;
-        gap: 1rem;
-      }
+.attendance h1 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 0.78rem;
+}
 
-      .subjects > div {
-        width: 30%;
-        background-color: #fff;
-        padding: 1.5rem;
-        border-radius: 12px;
-        box-shadow: 10px 10px 10px 10px rgba(164, 141, 141, 0.849);
-        transition: box-shadow 0.3s ease;
-        height: 50vmin;
-      }
+.subjects {
+  display: flex;
+  gap: 1rem;
+}
 
-      .subjects > div:hover {
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.97);
-        transition: box-shadow 0.3s ease;
-      }
+.subjects > div {
+  width: 30%;
+  background-color: #fff;
+  padding: 1.1rem;
+  border-radius: 12px;
+  box-shadow: 2px 2px 2px 2px rgba(86, 81, 81, 0.849);
+  transition: box-shadow 0.2s ease;
+  min-height: 250px;
+}
 
-      .subjects > div .material-icons-sharp {
-        font-size: 1.5rem;
-        color: #093fd3;
-      }
+.subjects > div:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.97);
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
 
-      .subjects > div h3 {
-        font-size: 1.2rem;
-        margin-top: 1rem;
-        color: #333; /* Adjust text color as needed */
-      }
+.subjects > div .material-icons-sharp {
+  font-size: 1.2rem;
+  color: #093fd3;
+}
 
-      .subjects > div h2 {
-        font-size: 1rem;
-        margin: 1.2rem 0 0.75rem 0;
-        color: #333; /* Adjust text color as needed */
-      }
+.subjects > div h3 {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: #333; /* Adjust text color as needed */
+}
 
-      .progress-ring {
-        width: 85px;
-        height: 85px;
-        margin-left: 1rem;
-      }
+.subjects > div h2 {
+  font-size: 1rem;
+  margin: 1.2rem 0 0.75rem 0;
+  color: #333; /* Adjust text color as needed */
+}
 
-      .progress-ring-circle {
-        fill: none;
-        stroke: #873ce3; /* Change color as needed */
-        stroke-width: 8;
-        stroke-dasharray: 200; /* Circumference of the circle (2 * π * r) */
-        stroke-dashoffset: 0; /* Start the stroke at the beginning */
-        transition: stroke-dashoffset 0.35s;
-      }
+.progress-ring {
+  width: 45px;
+  height: 43px;
+  margin-left: 1rem;
+}
 
-      .progress-100 .progress-ring-circle {
-        stroke-dashoffset: 0; /* Filled circle */
-      }
+.progress-ring-circle {
+  fill: none;
+  stroke: #873ce3; /* Change color as needed */
+  stroke-width: 8;
+  stroke-dasharray: 200; /* Circumference of the circle (2 * π * r) */
+  stroke-dashoffset: 0; /* Start the stroke at the beginning */
+  transition: stroke-dashoffset 0.35s;
+}
 
-      .progress-75 .progress-ring-circle {
-        stroke-dashoffset: 50; /* 25% of the circumference */
-      }
+.progress-100 .progress-ring-circle {
+  stroke-dashoffset: 0; /* Filled circle */
+}
 
-      .progress-50 .progress-ring-circle {
-        stroke-dashoffset: 100; /* 50% of the circumference */
-      }
+.progress-75 .progress-ring-circle {
+  stroke-dashoffset: 50; /* 25% of the circumference */
+}
 
-      .progress-25 .progress-ring-circle {
-        stroke-dashoffset: 150 150; /* 75% of the circumference */
-      }
+.progress-50 .progress-ring-circle {
+  stroke-dashoffset: 100; /* 50% of the circumference */
+}
 
-      .subjects > div small {
-        display: block;
-        margin-top: 1rem;
-        color: #708db0;
-      }
+.progress-25 .progress-ring-circle {
+  stroke-dashoffset: 150 150; /* 75% of the circumference */
+}
 
-      /* Announcement section */
+.subjects > div small {
+  display: block;
+  margin-top: 1rem;
+  color: #708db0;
+}
 
-      .right {
-        padding: 2.5rem;
-        border-radius: 3px;
+/* Announcement section */
 
-        border: 0.3px solid rgb(188, 183, 183);
-      }
+.right {
+  padding: 2.5rem;
+  border-radius: 3px;
 
-      .right .announcements h2 {
-        margin-bottom: 1rem;
-        font-size: 1.6rem;
-      }
-      .right .announcements .updates {
-        border-radius: 12px; /* Adjust border radius as needed */
-        box-shadow: 10px 10px 10px 10px rgba(164, 141, 141, 0.849);
-        transition: box-shadow 0.3s ease;
-        background-color: #f6f6f9;
-        padding: 2rem;
-        border-radius: 20px;
-      }
-      .right .announcements .updates:hover {
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.97); /* Add box shadow */
-        transition: box-shadow 0.3s ease;
-      }
-      .right .announcements .updates .message {
-        gap: 1rem;
-        line-height: 1.5;
-        padding: 0.5rem 0;
-      }
+  border: 0.3px solid rgb(188, 183, 183);
+}
 
-      /* ...leaves... */
+.right .announcements h2 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+.right .announcements .updates {
+  border-radius: 12px; /* Adjust border radius as needed */
+  box-shadow: 0px 4px 8px rgba(55, 52, 52, 0.656);
+  transition: box-shadow 0.2s ease;
+  background-color: #f6f6f9;
+  padding: 1.1rem;
+  border-radius: 20px;
+}
+.right .announcements .updates:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.771); /* Add box shadow */
+  transition: box-shadow 0.2s ease;
+}
+.right .announcements .updates .message {
+  gap: 1rem;
+  line-height: 1.3;
+  padding: 0.5rem 0;
+}
 
-      .right .leaves {
-        margin-top: 1.8rem;
-      }
+/* ...leaves... */
 
-      .right .leaves h2 {
-        margin-bottom: 0.8rem;
-      }
+.right .leaves {
+  margin-top: 1.8rem;
+}
 
-      .right .leaves .teacher {
-        background: var(--color-white);
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 0.7rem;
-        border-radius: 12px; /* Adjust border radius as needed */
-        background-color: #f6f6f9;
-        padding: 2px;
-        border-radius: 20px;
-        box-shadow: 10px 10px 10px 10px rgba(164, 141, 141, 0.849);
-        transition: box-shadow 0.3s ease;
-      }
+.right .leaves h2 {
+  margin-bottom: 0.8rem;
+}
 
-      .profile-photo1 {
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        object-fit: cover; /* Ensures the image fills the container */
-        object-position: center; /* Centers the image within the container */
-      }
-      .right .leaves .teacher:hover {
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.97); /* Add box shadow */
-        transition: box-shadow 0.3s ease;
-      }
+.right .leaves .teacher {
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  border-radius: 12px; /* Adjust border radius as needed */
+  background-color: #f6f6f9;
+  padding: 2px;
+  border-radius: 20px;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.389);
+  transition: box-shadow 0.2s ease;
+}
+
+.profile-photo1 {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image fills the container */
+  object-position: center; /* Centers the image within the container */
+}
+.right .leaves .teacher:hover {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.664);
+  transition: box-shadow 0.2s ease;
+}

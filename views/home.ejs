@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="/css/home.css" />
   </head>
   <body>
-    <% if (locals.name) { %>
-    <p>WELCOME <%= name%> !</p>
-    <% } %>
     <div class="container">
       <nav>
         <ul>
@@ -24,9 +21,12 @@
                 src="https://tse2.mm.bing.net/th?id=OIP.ukLqyF8d-sjUC4myACa0gwHaE8&pid=Api&P=0&h=180"
                 alt=""
               />
-              <span class="nav-item">Dashboard</span>
+              <span class="nav-item">Dashboard</span><br />
             </a>
           </li>
+          <% if (locals.name) { %>
+            <p class="named">WELCOME <%= name%> !</p>
+            <% } %>
           <li>
             <a href="#">
               <i class="fas fa-home"></i>

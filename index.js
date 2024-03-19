@@ -3,7 +3,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const userRoute = require("./routes/user");
 const staticRoute = require("./routes/staticRouter");
-const feedRoute=require("./routes/feedRoute");
+const feedRoute = require("./routes/feedRoute");
 const { checkAuth } = require("./middlewares/auth");
 const { connectToMongoDb } = require("./connect");
 //variables
@@ -23,10 +23,10 @@ app.set("views", path.resolve("./views"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use("/feedback-s",feedRoute);
+app.use("/feedback-s", feedRoute);
 app.use("/user", userRoute);
 app.use("/", checkAuth, staticRoute);
-
+app.use(express.static("public"));
 //routes
 // app.use("/user", userRoute);
 

@@ -9,7 +9,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   if (!req.user) return res.redirect("/login");
   const user = req.user;
-  return res.render("home", { name: user.name });
+  return res.render("Dashboard", { name: user.name });
 });
 
 router.get("/signup", (req, res) => {

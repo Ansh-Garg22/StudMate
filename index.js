@@ -26,13 +26,17 @@ app.use(cookieParser());
 app.use("/feedback-s", feedRoute);
 app.use("/user", userRoute);
 app.use("/", checkAuth, staticRoute);
+
 app.use(express.static("public"));
 //routes
 // app.use("/user", userRoute);
+app.get("/home",(req,res)=>{
+  res.render("home");
+})
 
-app.get("/about", (req, res) => {
-  res.end("hello about is running :)");
-});
+// app.get("/about", (req, res) => {
+//   res.end("hello about is running :)");
+// });
 
 //PORT
 app.listen(PORT, () => console.log(`Server started at Port ${PORT}`));

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Management Dashboard</title>
+
+    <!-- Font Awesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/Dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img
+                src="https://tse2.mm.bing.net/th?id=OIP.ukLqyF8d-sjUC4myACa0gwHaE8&pid=Api&P=0&h=180"
+                alt=""
+              />
+              <span class="nav-item">Dashboard</span><br />
+            </a>
+          </li>
+          <% if (locals.name) { %>
+            <p class="named">WELCOME <%= name%> !</p>
+            <% } %>
+          <li>
+            <a href="#">
+              <i class="fas fa-home"></i>
+              <span class="nav-item">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">Students</span>
+            </a>
+          </li>
+          <li>
+            <a href="/feedback">
+              <i class="fas fa-user-graduate"></i>
+              <span class="nav-item">Feedback</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-book"></i>
+              <span class="nav-item">Library</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-chart-bar"></i>
+              <span class="nav-item">Analytics</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-cog"></i>
+              <span class="nav-item">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-question-circle"></i>
+              <span class="nav-item">Help</span>
+            </a>
+          </li>
+          <li>
+            <a href="/logout" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Log out</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="attendance">
+        <h1>Attendance</h1>
+        <div class="subjects">
+          <div class="eg">
+            <span class="material-icons-sharp">Engineering Graphics</span>
+            <h3>Attendance Ratio</h3>
+            <h2>12/14</h2>
+            <div class="progress">
+              <svg class="progress-ring" viewBox="0 0 80 80">
+                <circle
+                  class="progress-ring-circle"
+                  cx="40"
+                  cy="40"
+                  r="34"
+                ></circle>
+                <text x="32%" y="52%" style="font-size: 14px">89%</text>
+              </svg>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+          </div>
+          <div class="mth">
+            <span class="material-icons-sharp">Web Development</span>
+            <h3>Attendance Ratio</h3>
+            <h2>27/29</h2>
+            <div class="progress">
+              <svg class="progress-ring" viewBox="0 0 80 80">
+                <circle
+                  class="progress-ring-circle"
+                  cx="40"
+                  cy="40"
+                  r="34"
+                  style="stroke-dasharray: 204"
+                ></circle>
+                <text x="32%" y="52%" style="font-size: 14px">93%</text>
+              </svg>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+          </div>
+
+          <div class="cs">
+            <span class="material-icons-sharp">Scripting Language</span>
+            <h3>Attendance Ratio</h3>
+            <h2>20/30</h2>
+            <div class="progress">
+              <svg class="progress-ring" viewBox="0 0 80 80">
+                <circle
+                  class="progress-ring-circle"
+                  cx="40"
+                  cy="40"
+                  r="34"
+                  style="stroke-dasharray: 150; transform: rotate(-90)"
+                ></circle>
+                <text x="32%" y="52%" style="font-size: 14px">66%</text>
+              </svg>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="announcements">
+          <h2>Announcements</h2>
+          <div class="updates">
+            <div class="message">
+              <p>
+                <b>Academic</b> Summer training internship with Live Projects.
+              </p>
+              <small class="text-muted">2 Minutes Ago</small>
+            </div>
+            <div class="message">
+              <p>
+                <b>Co-curricular</b> Global internship opportunity by Student
+                organization.
+              </p>
+              <small class="text-muted">10 Minutes Ago</small>
+            </div>
+            <div class="message">
+              <p><b>Examination</b> Instructions for Mid Term Examination.</p>
+              <small class="text-muted">Yesterday</small>
+            </div>
+          </div>
+
+          <div class="leaves">
+            <h2>Teachers on leave</h2>
+            <div class="teacher">
+              <img
+                src="https://tse2.mm.bing.net/th?id=OIP.AJccaqqfgF0gUTAOl9i8gAHaFo&pid=Api&P=0&h=180"
+              />
+
+              <div class="info">
+                <h3>The Professor</h3>
+                <small class="text-muted">Full Day</small>
+              </div>
+            </div>
+            <div class="teacher">
+              <img
+                src="https://www.nawpic.com/media/2020/cute-dog-nawpic-9-e1609617185188.jpg"
+                id="profile-photo1"
+                alt=""
+              />
+              <div class="info">
+                <h3>Lisa Manobal</h3>
+                <small class="text-muted">Half Day</small>
+              </div>
+            </div>
+            <div class="teacher">
+              <img
+                src="https://tse2.mm.bing.net/th?id=OIP.wXMw8d6a2PtkWdSUa4GcKQHaFI&pid=Api&P=0&h=180"
+                alt=""
+              />
+              <div class="info">
+                <h3>Himanshu Jindal</h3>
+                <small class="text-muted">Full Day</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

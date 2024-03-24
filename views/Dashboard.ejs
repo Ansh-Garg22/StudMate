@@ -1,68 +1,73 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Student Management Dashboard</title>
+
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="/css/Dashboard.css" />
   </head>
   <body>
     <div class="container">
-      <nav>
+      <div class="nav">
         <ul>
           <li>
-            <a href="#" class="logo">
-              <img
-                src="https://tse2.mm.bing.net/th?id=OIP.ukLqyF8d-sjUC4myACa0gwHaE8&pid=Api&P=0&h=180"
-                alt=""
-              />
+            <a href="#" class="logo" style="color: #0d0d0d">
+              <i
+                class="fa-solid fa-graduation-cap fa-rotate-by"
+                style="
+                  color: #2005b7;
+                  --fa-rotate-angle: 10deg;
+                  font-size: 30px;
+                "
+              ></i>
               <span class="nav-item">Dashboard</span><br />
             </a>
           </li>
-          <% if (locals.name) { %>
-          <p class="named">WELCOME <%= name%> !</p>
-          <% } %>
-          <li>
-            <a href="#">
+          
+            <a class="hoverable" href="#">
               <i class="fas fa-home"></i>
               <span class="nav-item">Home</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a class="hoverable" href="#">
               <i class="fas fa-user"></i>
               <span class="nav-item">Students</span>
             </a>
           </li>
           <li>
-            <a href="/feedback">
+            <a class="hoverable" href="/feedback">
               <i class="fas fa-user-graduate"></i>
               <span class="nav-item">Feedback</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a class="hoverable" href="#">
               <i class="fas fa-book"></i>
               <span class="nav-item">Library</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a class="hoverable" href="#">
               <i class="fas fa-chart-bar"></i>
               <span class="nav-item">Analytics</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a class="hoverable" href="#">
               <i class="fas fa-cog"></i>
               <span class="nav-item">Settings</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a class="hoverable" href="#">
               <i class="fas fa-question-circle"></i>
               <span class="nav-item">Help</span>
             </a>
@@ -74,153 +79,203 @@
             </a>
           </li>
         </ul>
-      </nav>
-
-      <div class="attendance">
-        <h1>Attendance</h1>
-        <div class="subjects">
-          <div class="eg">
-            <span class="material-icons-sharp">Engineering Graphics</span>
-            <h3>Attendance Ratio</h3>
-            <h2>12/14</h2>
-            <div class="progress">
-              <svg class="progress-ring" viewBox="0 0 80 80">
-                <circle
-                  class="progress-ring-circle"
-                  cx="40"
-                  cy="40"
-                  r="34"
-                ></circle>
-                <text x="32%" y="52%" style="font-size: 14px">89%</text>
-              </svg>
+      </div>
+      <div class="left">
+        <div class="welcome">
+          <div>
+          <p style="font-size: 15px; margin: 12px 0 0 17px;">April 30, Tuesday</p>
+          <br>
+          <!-- <h1>Welcome back, Dear!</h1> -->
+          <h1  style="font-size: 40px; margin: 0 0 0 17px;">Welcome back ,<%= name %>!</h1>
+          <p style="font-size: 15px; margin: 0 0 20px 20px;">You have finished <b>85%</b> of your weekly goal !</p>
+        </div>
+        <div>
+          <img class="grad" src="/css/images/graduation.png" >
+        </div></div>
+        <div class="attendance">
+          <h2 style="color: #4a3e3e;">My Courses</h2>
+          <div class="subjects">
+            <% subjects.forEach(subject => { %>
+            <div class="eg">
+              <div class="imgbox" style="background-color:rgb(191, 144, 249);">
+                <img src="/css/images/web.png" style="width: 100px;height: 100px; margin-left: 40px;">
+              </div>
+              <div class="imgbox2">
+                <span class="material-icons-sharp"><b style="color: #3f3535;"><%= subject.name %></b></span>
+                <h3><%= subject.presentCount %>/<%= subject.totalClasses %></h3>
+                <div class="progress-bar">
+                  <div class="progress" style="width: <%= ((subject.presentCount / 40) * 100).toFixed(0) %>%;"></div>
+                  <small class="text-muted">Completed: <%= ((subject.presentCount / 40) * 100).toFixed(0) %>%</small>
+                </div>
+              </div>
             </div>
-            <small class="text-muted">Last 24 Hours</small>
+            <% }) %>
           </div>
-          <div class="mth">
-            <span class="material-icons-sharp">Web Development</span>
-            <h3>Attendance Ratio</h3>
-            <h2>27/29</h2>
-            <div class="progress">
-              <svg class="progress-ring" viewBox="0 0 80 80">
-                <circle
-                  class="progress-ring-circle"
-                  cx="40"
-                  cy="40"
-                  r="34"
-                  style="stroke-dasharray: 204"
-                ></circle>
-                <text x="32%" y="52%" style="font-size: 14px">93%</text>
-              </svg>
-            </div>
-            <small class="text-muted">Last 24 Hours</small>
-          </div>
+        </div>
+        <div class="l-bottom">
+          <h2 style="color: #4a3e3e;">Achievements</h2>
+          <div class="ac">
+            <div class="ac1">
+              <div class="a11">
+              <p style="font-size: 19px;color: #ff9501;margin: 10px 0 0 10px;"><b>Inorganic Chemistry</b></p>
+              <p style="font-size: 19px;color: #ff9501;margin: 1px 0 0 10px;"><b>Certificate</b></p>
+              <button><b>View</b></button>
 
-          <div class="cs">
-            <span class="material-icons-sharp">Scripting Language</span>
-            <h3>Attendance Ratio</h3>
-            <h2>20/30</h2>
-            <div class="progress">
-              <svg class="progress-ring" viewBox="0 0 80 80">
-                <circle
-                  class="progress-ring-circle"
-                  cx="40"
-                  cy="40"
-                  r="34"
-                  style="stroke-dasharray: 150; transform: rotate(-90)"
-                ></circle>
-                <text x="32%" y="52%" style="font-size: 14px">66%</text>
-              </svg>
             </div>
-            <small class="text-muted">Last 24 Hours</small>
+              <div class="a12">
+                <i class="fa-solid fa-award fa-beat" style="color: #2064d9;font-size: 60px;"></i>
+              </div>
+            </div>
+
+
+            <div class="ac2">
+              <div class="a11">
+                <p style="font-size: 20px;color: #b416e4;margin: 10px 0 0 10px;"><b>Social Philosophy</b></p>
+                <p style="font-size: 20px;color: #b416e4;margin: 1px 0 0 10px;"><b>Certificate</b></p>
+                <button style="background-color: #b416e4;"><b>View</b></button>
+              </div>
+              <div class="a12">
+                <i class="fa-solid fa-award fa-beat" style="color: #2064d9;font-size: 60px;"></i>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="right">
+        <h2 id="h21">Announcements</h2>
+
         <div class="announcements">
-          <h2>Announcements</h2>
           <div class="updates">
             <div class="message">
               <p>
-                <b>Academic</b> Summer training internship with Live Projects.
+                <b style="color: #4a3f3f;">Academic</b> Summer training internship with Live Projects.
               </p>
               <small class="text-muted">2 Minutes Ago</small>
             </div>
             <div class="message">
               <p>
-                <b>Co-curricular</b> Global internship opportunity by Student
+                <b style="color: #4a3f3f;">Co-curricular</b> Global internship opportunity by Student
                 organization.
               </p>
               <small class="text-muted">10 Minutes Ago</small>
             </div>
             <div class="message">
-              <p><b>Examination</b> Instructions for Mid Term Examination.</p>
+              <p><b style="color: #4a3f3f;">Examination</b> Instructions for Mid Term Examination.</p>
               <small class="text-muted">Yesterday</small>
             </div>
           </div>
 
+          <h2 id="h22">Upcoming Tasks</h2>
+
           <div class="leaves">
-            <h2>Teachers on leave</h2>
+            <small class="text-muted">Today</small>
+
             <div class="teacher">
-              <img
-                src="https://tse2.mm.bing.net/th?id=OIP.AJccaqqfgF0gUTAOl9i8gAHaFo&pid=Api&P=0&h=180"
-              />
+              <i
+                class="fa-solid fa-microphone"
+                style="color: #9f0000; font-size: 25px"
+              ></i>
 
               <div class="info">
-                <h3>The Professor</h3>
-                <small class="text-muted">Full Day</small>
+                <h3>Demo Speech</h3>
+                <small class="text-muted">Mass Communication</small>
+              </div>
+              <div class="arrow">
+                <p
+                  style="
+                    font-size: 25px;
+                    color: rgb(138, 132, 132);
+                    margin-left: 40px;
+                  "
+                >
+                  >
+                </p>
               </div>
             </div>
             <div class="teacher">
-              <img
-                src="https://www.nawpic.com/media/2020/cute-dog-nawpic-9-e1609617185188.jpg"
-                id="profile-photo1"
-                alt=""
-              />
+              <i
+                class="fa-sharp fa-solid fa-file-pen"
+                style="
+                  color: #f18f07;
+                  font-size: 25px;
+                  background-color: #ffe8a9;
+                "
+              ></i>
               <div class="info">
-                <h3>Lisa Manobal</h3>
-                <small class="text-muted">Half Day</small>
+                <h3>Globalisation Essay</h3>
+                <small class="text-muted">Advanced Geography</small>
+              </div>
+              <div class="arrow">
+                <p
+                  style="
+                    font-size: 25px;
+                    color: rgb(138, 132, 132);
+                    margin-left: 0px;
+                  "
+                >
+                  >
+                </p>
+              </div>
+            </div>
+
+            <small class="text-muted">This Week</small>
+
+            <div class="teacher">
+              <i
+                class="fa-solid fa-clock"
+                style="
+                  color: #744ceb;
+                  font-size: 25px;
+                  background-color: rgb(198, 172, 245);
+                "
+              ></i>
+              <div class="info">
+                <h3>Management Quiz</h3>
+                <small class="text-muted">Product management</small>
+              </div>
+              <div class="arrow">
+                <p
+                  style="
+                    font-size: 25px;
+                    color: rgb(138, 132, 132);
+                    margin-left: 10px;
+                  "
+                >
+                  >
+                </p>
               </div>
             </div>
             <div class="teacher">
-              <img
-                src="https://tse2.mm.bing.net/th?id=OIP.wXMw8d6a2PtkWdSUa4GcKQHaFI&pid=Api&P=0&h=180"
-                alt=""
-              />
+              <i
+                class="fa-sharp fa-solid fa-file-pen"
+                style="
+                  color: #f18f07;
+                  font-size: 25px;
+                  background-color: #ffe8a9;
+                "
+              ></i>
+
               <div class="info">
-                <h3>Himanshu Jindal</h3>
-                <small class="text-muted">Full Day</small>
+                <h3>Docu Paper</h3>
+                <small class="text-muted">Advance Geography</small>
+              </div>
+              <div class="arrow">
+                <p
+                  style="
+                    font-size: 25px;
+                    color: rgb(138, 132, 132);
+                    margin-left: 50px;
+                  "
+                >
+                  >
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- <link rel="stylesheet" href="/css/home.css" /> -->
-  </head>
-  <body>
-    <h1>Welcome <%= name %></h1>
-    <h2>Subjects and Present Count:</h2>
-    <ul>
-      <% subjects.forEach(subject => { %>
-      <li><%= subject.name %> - Present Count: <%= subject.presentCount %></li>
-      <% }); %>
-    </ul>
   </body>
 </html>

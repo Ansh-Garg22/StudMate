@@ -11,19 +11,27 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     if (!req.user) return res.redirect("/login");
-
     const userId = req.user._id;
 
-    // Find the user by ID
-    const user = await User.findById(userId).populate("attendance.subject");
-    console.log(user);
-    // Populate the attendance field with subject details
+    // Find the user by ID and populate the attendance field with subject details
+    const user = await User.findById(userId).populate({
+      path: "attendance.subject",
+      model: "Subject",
+      select: "name",
+    });
+
+    // Extract the required data from the user object
+    const userData = {
+      name: user.name,
+      subjects: user.attendance.map((attendance) => ({
+        name: attendance.subject.name,
+        presentCount: attendance.presentCount,
+        absentCount: attendance.absentCount,
+      })),
+    };
 
     // Render the Dashboard EJS template with user's name and subject details
-    return res.render("Dashboard", {
-      name: user.name,
-      subjects: user.attendance[0],
-    });
+    return res.render("Dashboard", userData);
   } catch (error) {
     console.error("Error rendering dashboard:", error);
     return res.status(500).send("Internal Server Error");

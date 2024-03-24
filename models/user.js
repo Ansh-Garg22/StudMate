@@ -20,6 +20,15 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    semester: { type: String, required: true },
+    subjects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'subject' }],
+    attendance: [
+      {
+        subject: { type: mongoose.Schema.Types.ObjectId, ref: "subject" },
+        presentCount: { type: Number, default: 0 },
+        absentCount: { type: Number, default: 0 },
+      },
+    ],
   },
   { timestamps: true }
 );

@@ -5,6 +5,7 @@ const userRoute = require("./routes/user");
 const staticRoute = require("./routes/staticRouter");
 const feedRoute = require("./routes/feedRoute");
 const { checkAuth } = require("./middlewares/auth");
+const {handleSubjectCreation}=require("./controllers/subject");
 const { connectToMongoDb } = require("./connect");
 //variables
 const PORT = 8000;
@@ -33,6 +34,7 @@ app.use(express.static("public"));
 app.get("/home",(req,res)=>{
   res.render("home");
 })
+app.post("/subjects", handleSubjectCreation);
 
 // app.get("/about", (req, res) => {
 //   res.end("hello about is running :)");

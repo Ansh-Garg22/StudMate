@@ -117,7 +117,7 @@ a {
 #h21 {
   margin-bottom: 1.3rem;
   margin-right: 1000px;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   color: #413d3d;
 }
 .right .announcements .updates {
@@ -285,7 +285,7 @@ button {
   padding: 0rem;
   border-radius: 12px;
   transition: box-shadow 0.2s ease;
-  height: 220px;
+  min-height: 220px;
 }
 
 .subjects > div:hover {

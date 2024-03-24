@@ -1,0 +1,395 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color:rgb(234, 234, 247);
+}
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #e6ebf9;
+}
+.named {
+  padding-inline-start: 20px;
+  padding-block-end: 10px;
+}
+.nav {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  min-height: 100vh;
+  left: 0;
+  background: #fff;
+  width: 270px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  text-align: center;
+  display: flex;
+  margin: 30px 0 80px 10px;
+
+}
+img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.logo span {
+  font-weight: bold;
+  padding-left: 5px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+a {
+  position: relative;
+  color: rgb(109, 101, 101);
+  font-size: 16px;
+  display: table;
+  width: 224px;
+  height: 50px;
+  padding: 8px;
+  margin-left: 6px;
+
+
+}
+.nav .fas {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  top: 2px;
+  font-size: 20px;
+  text-align: center;
+  margin-left: 0px;
+
+  
+}
+
+
+
+
+.nav-item {
+  position: relative;
+  top: 3px;
+  margin-left: 7px;
+}
+.hoverable:hover {
+  background: #c0d2f3;
+  border-radius: 13px;
+  color: #1b4edd;
+}
+.logout {
+  position: absolute;
+  bottom: 22px;
+  color: #545252;
+  
+}
+
+
+
+
+
+
+/* .....WELCOME...... */
+
+
+.welcome
+{
+  display: flex;
+  width: 82.3%;
+  height: 165px;
+  border-radius:20px;
+  margin: 25px 0px 0px 72px;
+  background-color: #3958e2d6;
+  color: white;
+  justify-content: space-around;
+}
+.grad
+{
+  margin: 20px 0 0 0;
+  width: 170px;
+  height: 150px;
+}
+.left
+{
+  display: flex;
+  flex-direction: column;
+  width:59%;
+  
+}
+
+
+
+/* Announcement section */
+
+.right {
+  padding: 2.5rem;
+  border-radius: 3px;
+  width: 410px;
+}
+
+#h21 {
+  margin-bottom: 1.3rem;
+  margin-right: 1000px;
+  font-size: 1.6rem;
+  color:#413d3d;
+
+}
+.right .announcements .updates {
+  border-radius: 12px; /* Adjust border radius as needed */
+  box-shadow: 0px 4px 4px rgba(55, 52, 52, 0.656);
+  transition: box-shadow 0.2s ease;
+  background-color: #f6f6f9;
+  padding: 1.1rem;
+  border-radius: 20px;
+}
+.right .announcements .updates:hover {
+  box-shadow: 10px 4px 8px rgba(0, 0, 0, 0.771); /* Add box shadow */
+  transition: box-shadow 0.2s ease;
+  transform: scale(1.01);
+
+}
+.right .announcements .updates .message {
+  gap: 1rem;
+  line-height: 1.2;
+  font-size: 15px;
+  padding: 0.2rem 0.2rem 0 0.2rem;
+}
+
+/* ...leaves... */
+
+.right .leaves {
+  margin-top: 1rem;
+
+}
+
+#h22 {
+  margin-bottom: 0.8rem;
+  margin-top: 1.8rem;
+  margin-right: 4rem;
+  font-size: 1.rem;
+  color:#413d3d
+}
+
+.right .leaves .teacher {
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  margin-bottom: 0.8rem;
+  border-radius: 17px; /* Adjust border radius as needed */
+  background-color: #f6f6f9;
+  padding: 1px;
+  transition: box-shadow 0.4s ease;
+  height: 50px;
+
+}
+
+.right .leaves .teacher:hover
+{
+  transform: scale(1.07);
+  box-shadow: 10px 4px 8px rgba(0, 0, 0, 0.771); /* Add box shadow */
+}
+.leaves .teacher i {
+
+  border-radius: 10px; 
+  background-color: rgb(204, 104, 104);
+  width: 42px; 
+  height: 42px;
+  padding: 5px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.text-muted
+{
+  color: #7d8b91;
+}
+
+.info h3{
+  color: #5f5251;
+}
+
+.l-bottom
+{
+  width:100%;
+  height: 45%;
+  margin-bottom: 0px;
+}
+.ac
+{
+  height: 80%;
+  display:flex;
+  justify-content: space-evenly;
+  margin-bottom: 0px;
+  width: 95%;
+  margin-left: 16px;
+}
+
+.ac1
+{
+  width: 40%;
+  border-radius: 12px;
+  height: 75%;
+  margin-top: 10px;
+  background-color: rgb(255, 221, 181);
+  margin-bottom: 0px;
+  display:flex;
+  justify-content: space-between;
+
+}
+.ac1:hover
+{
+  border: 4px solid #ffa322;
+
+}
+.ac2:hover
+{
+  border: 4px solid #8038ec;
+
+}
+.ac2
+{
+  width: 40%;
+  border-radius: 12px;
+  height: 75%;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  display:flex;
+  justify-content: space-between;
+  background-color: rgb(191, 144, 249);
+
+}
+
+.l-bottom h2 {
+
+  font-size: 1.65rem;
+  font-weight: bold;
+  margin:26px 0 0.5rem 67px;
+}
+button
+{
+  width: 50%;
+  height: 25%;
+  border-radius: 12px;
+  background-color: #ff9501;
+  color:white;
+  font-size: 16px;
+  margin: 10px 0 0 18px;
+  cursor: pointer;
+}
+.a12
+{
+  margin: 35px 50px 0 0;
+  
+}
+
+.imgbox
+{
+  width: 100%;
+  border-radius: 10px;
+  height: 50%;
+}
+
+/* Attendance Section */
+.attendance {
+
+  margin: 0rem 1.5rem 0 0;
+  padding: 0.6rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 3px;
+  width: 100%;
+  height:42%;
+}
+
+.attendance h2 {
+  font-size: 1.65rem;
+  font-weight: bold;
+  margin-bottom: 0.88rem;
+  margin-top: 12px;
+  margin-left: 45px;
+}
+
+.subjects {
+
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 10px 0 0px;
+
+}
+
+
+.subjects > div {
+  width: 25%;
+  background-color: #fff;
+  padding: 0rem;
+  border-radius: 12px;
+  transition: box-shadow 0.2s ease;
+  height: 220px;
+
+}
+.subjects > div:hover
+{
+  transform: scale(1.03);
+  border: 3px solid burlywood;
+}
+
+.subjects > div:first-child:hover {
+  transform: scale(1.03);
+  border: 3px solid rgb(163, 52, 218); /* Blue border color */
+}
+
+.imgbox2
+{
+  padding: 0.50rem;
+
+}
+
+.subjects > div:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.97);
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.subjects > div .material-icons-sharp {
+  font-size: 0.8rem;
+  color: #04060b;
+}
+
+.subjects > div h3 {
+  font-size: 1rem;
+  margin-top: 0.45rem;
+  color: #6a6262; /* Adjust text color as needed */
+}
+
+.subjects > div h2 {
+  font-size: 1rem;
+  margin: 1.2rem 0 0.75rem 0;
+  color: #333; /* Adjust text color as needed */
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px; /* Adjust height as needed */
+  background-color: #bdbcbc; /* Background color of the progress bar */
+  border-radius: 10px; /* Border radius to give it rounded corners */
+}
+
+.progress {
+  height: 100%;
+  background-color: #873ce3; /* Color of the progress bar */
+  border-radius: 10px; /* Border radius to match the parent */
+}
+
+.subjects > div small {
+  display: block;
+  margin-top: 1rem;
+  color: #708db0;
+}

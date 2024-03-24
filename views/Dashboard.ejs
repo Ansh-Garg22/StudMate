@@ -83,7 +83,7 @@
       <div class="left">
         <div class="welcome">
           <div>
-          <p style="font-size: 15px; margin: 12px 0 0 17px;">April 30, Tuesday</p>
+          <p id="currentTime" style="font-size: 15px; margin: 12px 0 0 17px;"></p>
           <br>
           <!-- <h1>Welcome back, Dear!</h1> -->
           <h1  style="font-size: 40px; margin: 0 0 0 17px;">Welcome back ,<%= name %>!</h1>
@@ -112,7 +112,7 @@
             <% }) %>
           </div>
         </div>
-        <div class="l-bottom">
+        <!-- <div class="l-bottom">
           <h2 style="color: #4a3e3e;">Achievements</h2>
           <div class="ac">
             <div class="ac1">
@@ -139,8 +139,8 @@
 
               </div>
             </div>
-          </div>
-        </div>
+          </div> 
+        </div>-->
       </div>
 
       <div class="right">
@@ -277,5 +277,24 @@
         </div>
       </div>
     </div>
+
+
+
+
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const currentDate = now.toLocaleDateString('en-US', options);
+        const currentTime = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' });
+        document.getElementById('currentTime').textContent = `${currentDate}, ${currentTime}`;
+      }
+    
+      // Update the time immediately on page load
+      updateTime();
+    
+      // Update the time every second
+      setInterval(updateTime, 1000);
+    </script>
   </body>
 </html>

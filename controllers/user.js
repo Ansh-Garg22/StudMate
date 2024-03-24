@@ -10,7 +10,7 @@ async function handleUserSignup(req, res) {
   try {
     // Find or create the semester
     const found_subjects = await Subject.find({ semester: semester });
-
+ 
     if (!found_subjects.length) {
       return res.status(404).json({ success: false, error: "No subjects found for the semester" });
     }

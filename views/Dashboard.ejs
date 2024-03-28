@@ -108,15 +108,15 @@
                   <span class="material-icons-sharp"
                     ><b style="color: #3f3535;"><%= subject.name %></b></span
                   >
-                  <h3><%= subject.presentCount %>/<%= subject.totalClasses %></h3>
+                  <h3><%= subject.presentCount %>/<%= (subject.presentCount)+(subject.absentCount) %></h3>
                   <div class="progress-bar">
                     <div
                       class="progress"
-                      style="width: <%= ((subject.presentCount / subject.totalClasses) * 100).toFixed(0) %>%;"
+                      style="width: <%= ((subject.presentCount / (subject.presentCount)+(subject.absentCount)) * 100).toFixed(0) %>%;"
                     ></div>
                     <small class="text-muted"
                       >Completed:
-                      <%= ((subject.presentCount / subject.totalClasses) * 100).toFixed(0) %>%</small
+                      <%= (((subject.presentCount) / (subject.presentCount)+(subject.absentCount))*100).toFixed(0) %>%</small
                     >
                   </div>
                 </div>

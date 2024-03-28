@@ -280,7 +280,7 @@ button {
 
 .eg {
   flex: 0 0 auto;
-  width: 25%;
+  min-width: 200px;
   background-color: #fff;
   padding: 0rem;
   border-radius: 12px;

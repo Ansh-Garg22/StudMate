@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mark Attendance</title>
+  </head>
+  <body>
+    <h1>Mark Attendance for <%= subject.name %></h1>
+    <form id="attendance-form">
+      <input type="hidden" name="subjectId" value="<%= subject._id %>" />
+      <label>
+        <input type="radio" name="isPresent" value="true" required /> Present
+      </label>
+      <label>
+        <input type="radio" name="isPresent" value="false" required /> Absent
+      </label>
+      <br />
+      <button type="submit">Mark Attendance</button>
+    </form>
+    <script>
+      const attendanceForm = document.getElementById("attendance-form");
+      attendanceForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(attendanceForm);
+        const response = await fetch("/markAttendance", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(Object.fromEntries(formData)),
+        });
+        const data = await response.json();
+        alert(data.message);
+        window.location.href = "/"; // Redirect to the dashboard after marking attendance
+      });
+    </script>
+  </body>
+</html>

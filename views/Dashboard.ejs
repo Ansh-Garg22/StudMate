@@ -97,17 +97,30 @@
           <div class="subjects">
             <% subjects.forEach(subject => { %>
             <div class="eg">
-              <div class="imgbox" style="background-color:rgb(191, 144, 249);">
-                <img src="/css/images/web.png" style="width: 100px;height: 100px; margin-left: 40px;">
-              </div>
-              <div class="imgbox2">
-                <span class="material-icons-sharp"><b style="color: #3f3535;"><%= subject.name %></b></span>
-                <h3><%= subject.presentCount %>/<%= subject.totalClasses %></h3>
-                <div class="progress-bar">
-                  <div class="progress" style="width: <%= ((subject.presentCount / 40) * 100).toFixed(0) %>%;"></div>
-                  <small class="text-muted">Completed: <%= ((subject.presentCount / 40) * 100).toFixed(0) %>%</small>
+              <a href="/markAttendance/<%= subject._id %>">
+                <div class="imgbox" style="background-color: rgb(191, 144, 249);">
+                  <img
+                    src="/css/images/web.png"
+                    style="width: 100px; height: 100px; margin-left: 40px;"
+                  />
                 </div>
-              </div>
+                <div class="imgbox2">
+                  <span class="material-icons-sharp"
+                    ><b style="color: #3f3535;"><%= subject.name %></b></span
+                  >
+                  <h3><%= subject.presentCount %>/<%= subject.totalClasses %></h3>
+                  <div class="progress-bar">
+                    <div
+                      class="progress"
+                      style="width: <%= ((subject.presentCount / subject.totalClasses) * 100).toFixed(0) %>%;"
+                    ></div>
+                    <small class="text-muted"
+                      >Completed:
+                      <%= ((subject.presentCount / subject.totalClasses) * 100).toFixed(0) %>%</small
+                    >
+                  </div>
+                </div>
+              </a>
             </div>
             <% }) %>
           </div>

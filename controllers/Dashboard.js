@@ -1,4 +1,4 @@
-const Subject = require("../models/subject"); // Import the Subject model
+const Subject = require("../models/subject");
 const User = require("../models/user");
 
 async function renderDashboard(req, res) {
@@ -10,13 +10,14 @@ async function renderDashboard(req, res) {
     const user = await User.findById(userId).populate({
       path: "attendance.subject",
       model: "Subject",
-      select: "name",
+      select: "_id name", // Include the _id field in the projection
     });
 
     // Extract the required data from the user object
     const userData = {
       name: user.name,
       subjects: user.attendance.map((attendance) => ({
+        _id: attendance.subject._id, // Add the _id property
         name: attendance.subject.name,
         presentCount: attendance.presentCount,
         absentCount: attendance.absentCount,
@@ -31,5 +32,4 @@ async function renderDashboard(req, res) {
   }
 }
 
-// Export the function to make it callable from elsewhere
 module.exports = renderDashboard;

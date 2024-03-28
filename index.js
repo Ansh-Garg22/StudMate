@@ -5,8 +5,10 @@ const userRoute = require("./routes/user");
 const staticRoute = require("./routes/staticRouter");
 const feedRoute = require("./routes/feedRoute");
 const { checkAuth } = require("./middlewares/auth");
-const {handleSubjectCreation}=require("./controllers/subject");
+const { handleSubjectCreation } = require("./controllers/subject");
 const { connectToMongoDb } = require("./connect");
+const markAttendanceRoute = require("./routes/markatt");
+
 //variables
 const PORT = 8000;
 const app = express();
@@ -31,9 +33,12 @@ app.use("/", checkAuth, staticRoute);
 app.use(express.static("public"));
 //routes
 // app.use("/user", userRoute);
-app.get("/home",(req,res)=>{
+app.get("/home", (req, res) => {
   res.render("home");
-})
+});
+
+app.use("/markAttendance", markAttendanceRoute);
+
 app.post("/subjects", handleSubjectCreation);
 
 // app.get("/about", (req, res) => {

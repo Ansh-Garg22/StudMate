@@ -1,13 +1,5 @@
 const mongoose = require("mongoose");
 
-const attendanceRecordSchema = new mongoose.Schema(
-  {
-    date: { type: Date, required: true },
-    present: { type: Boolean, required: true },
-  },
-  { _id: false }
-); // Disable automatic _id generation for subdocuments
-
 const userSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
@@ -21,7 +13,6 @@ const userSchema = new mongoose.Schema(
         subject: { type: mongoose.Schema.Types.ObjectId, ref: "subject" },
         presentCount: { type: Number, default: 0 },
         absentCount: { type: Number, default: 0 },
-        records: [attendanceRecordSchema], // Array of attendance records for each day
       },
     ],
   },

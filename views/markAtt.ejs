@@ -1,37 +1,258 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mark Attendance</title>
-  </head>
-  <body>
-    <h1>Mark Attendance for <%= subject.name %></h1>
-    <form id="attendance-form">
-      <input type="hidden" name="subjectId" value="<%= subject._id %>" />
-      <label>
-        <input type="radio" name="isPresent" value="true" required /> Present
-      </label>
-      <label>
-        <input type="radio" name="isPresent" value="false" required /> Absent
-      </label>
-      <br />
-      <button type="submit">Mark Attendance</button>
-    </form>
-    <script>
-      const attendanceForm = document.getElementById("attendance-form");
-      attendanceForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const formData = new FormData(attendanceForm);
-        const response = await fetch("/markAttendance", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(Object.fromEntries(formData)),
-        });
-        const data = await response.json();
-        alert(data.message);
-        window.location.href = "/"; // Redirect to the dashboard after marking attendance
+
+<head>
+  <title>Mark Attendance</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link rel="stylesheet" href="/css/Dashboard.css" />
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <ul>
+        <li>
+          <a href="#" class="logo" style="color: #0d0d0d">
+            <i class="fa-solid fa-graduation-cap fa-rotate-by" style="
+                  color: #2005b7;
+                  --fa-rotate-angle: 10deg;
+                  font-size: 30px;
+                "></i>
+            <span class="nav-item">Dashboard</span><br />
+          </a>
+        </li>
+
+        <a class="hoverable" href="#">
+          <i class="fas fa-home"></i>
+          <span class="nav-item">Home</span>
+        </a>
+        </li>
+        <li>
+          <a class="hoverable" href="#">
+            <i class="fas fa-user"></i>
+            <span class="nav-item">Students</span>
+          </a>
+        </li>
+        <li>
+          <a class="hoverable" href="/feedback">
+            <i class="fas fa-user-graduate"></i>
+            <span class="nav-item">Feedback</span>
+          </a>
+        </li>
+        <li>
+          <a class="hoverable" href="#">
+            <i class="fas fa-book"></i>
+            <span class="nav-item">Library</span>
+          </a>
+        </li>
+        <li>
+          <a class="hoverable" href="#">
+            <i class="fas fa-chart-bar"></i>
+            <span class="nav-item">Analytics</span>
+          </a>
+        </li>
+        <li>
+          <a class="hoverable" href="#">
+            <i class="fas fa-cog"></i>
+            <span class="nav-item">Settings</span>
+          </a>
+        </li>
+        <li>
+          <a class="hoverable" href="#">
+            <i class="fas fa-question-circle"></i>
+            <span class="nav-item">Help</span>
+          </a>
+        </li>
+        <li>
+          <a href="/logout" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="nav-item">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+    <div class="left">
+      <div class="attendance">
+        <h2 style="color: #4a3e3e;">Mark Attendance for <%= subject.name %>
+        </h2>
+        <form id="attendance-form">
+          <input type="hidden" name="subjectId" value="<%= subject._id %>" />
+          <label>
+            <input type="radio" name="isPresent" value="true" required /> Present
+          </label>
+          <label>
+            <input type="radio" name="isPresent" value="false" required /> Absent
+          </label>
+          <br />
+          <button type="submit">Mark Attendance</button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="right">
+      <h2 id="h21">Announcements</h2>
+
+      <div class="announcements">
+        <div class="updates">
+          <div class="message">
+            <p>
+              <b style="color: #4a3f3f;">Academic</b> Summer training internship with Live Projects.
+            </p>
+            <small class="text-muted">2 Minutes Ago</small>
+          </div>
+          <div class="message">
+            <p>
+              <b style="color: #4a3f3f;">Co-curricular</b> Global internship opportunity by Student
+              organization.
+            </p>
+            <small class="text-muted">10 Minutes Ago</small>
+          </div>
+          <div class="message">
+            <p><b style="color: #4a3f3f;">Examination</b> Instructions for Mid Term Examination.</p>
+            <small class="text-muted">Yesterday</small>
+          </div>
+        </div>
+
+        <h2 id="h22">Upcoming Tasks</h2>
+
+        <div class="leaves">
+          <small class="text-muted">Today</small>
+
+          <div class="teacher">
+            <i class="fa-solid fa-microphone" style="color: #9f0000; font-size: 25px"></i>
+
+            <div class="info">
+              <h3>Demo Speech</h3>
+              <small class="text-muted">Mass Communication</small>
+            </div>
+            <div class="arrow">
+              <p style="
+                  font-size: 25px;
+                  color: rgb(138, 132, 132);
+                  margin-left: 40px;
+                ">
+                >
+              </p>
+            </div>
+          </div>
+          <div class="teacher">
+            <i class="fa-sharp fa-solid fa-file-pen" style="
+                color: #f18f07;
+                font-size: 25px;
+                background-color: #ffe8a9;
+              "></i>
+            <div class="info">
+              <h3>Globalisation Essay</h3>
+              <small class="text-muted">Advanced Geography</small>
+            </div>
+            <div class="arrow">
+              <p style="
+                  font-size: 25px;
+                  color: rgb(138, 132, 132);
+                  margin-left: 0px;
+                ">
+                >
+              </p>
+            </div>
+          </div>
+
+          <small class="text-muted">This Week</small>
+
+          <div class="teacher">
+            <i class="fa-solid fa-clock" style="
+                color: #744ceb;
+                font-size: 25px;
+                background-color: rgb(198, 172, 245);
+              "></i>
+            <div class="info">
+              <h3>Management Quiz</h3>
+              <small class="text-muted">Product management</small>
+            </div>
+            <div class="arrow">
+              <p style="
+                  font-size: 25px;
+                  color: rgb(138, 132, 132);
+                  margin-left: 10px;
+                ">
+                >
+              </p>
+            </div>
+          </div>
+          <div class="teacher">
+            <i class="fa-sharp fa-solid fa-file-pen" style="
+                color: #f18f07;
+                font-size: 25px;
+                background-color: #ffe8a9;
+              "></i>
+
+            <div class="info">
+              <h3>Docu Paper</h3>
+              <small class="text-muted">Advance Geography</small>
+            </div>
+            <div class="arrow">
+              <p style="
+                  font-size: 25px;
+                  color: rgb(138, 132, 132);
+                  margin-left: 50px;
+                ">
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const currentDate = now.toLocaleDateString('en-US', options);
+      const currentTime = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' });
+      document.getElementById('currentTime').textContent = `${currentDate}, ${currentTime}`;
+    }
+
+    // Update the time immediately on page load
+    updateTime();
+
+    // Update the time every second
+    setInterval(updateTime, 1000);
+  </script>
+  <script>
+    const attendanceForm = document.getElementById("attendance-form");
+    attendanceForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(attendanceForm);
+      const response = await fetch("/markAttendance", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(Object.fromEntries(formData)),
       });
-    </script>
-  </body>
+      const data = await response.json();
+      alert(data.message);
+      window.location.href = "/"; // Redirect to the dashboard after marking attendance
+    });
+  </script>
+</body>
+
 </html>

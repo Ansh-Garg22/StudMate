@@ -112,11 +112,11 @@
                   <div class="progress-bar">
                     <div
                       class="progress"
-                      style="width: <%= ((subject.presentCount / (subject.presentCount)+(subject.absentCount)) * 100).toFixed(0) %>%;"
-                    ></div>
+                      style="width: <%= ((subject.presentCount / (subject.presentCount + subject.absentCount)) * 100).toFixed(0) %>%;"
+                      ></div>
                     <small class="text-muted"
                       >Completed:
-                      <%= (((subject.presentCount) / (subject.presentCount)+(subject.absentCount))*100).toFixed(0) %>%</small
+                      <%= ((subject.presentCount / (subject.presentCount + subject.absentCount)) * 100).toFixed(0) %>%</small
                     >
                   </div>
                 </div>

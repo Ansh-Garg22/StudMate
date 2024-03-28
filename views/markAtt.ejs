@@ -29,7 +29,7 @@
           </a>
         </li>
 
-        <a class="hoverable" href="#">
+        <a class="hoverable" href="/">
           <i class="fas fa-home"></i>
           <span class="nav-item">Home</span>
         </a>
@@ -99,7 +99,12 @@
         </form>
       </div>
     </div>
-
+    <h3>Attendance Records:</h3>
+    <ul>
+      <% subject.records.forEach(record => { %>
+      <li><%= record.date.toLocaleDateString() %> - <%= record.present ? 'Present' : 'Absent' %></li>
+      <% }) %>
+    </ul>
 
 
 
@@ -221,21 +226,6 @@
 
   </div>
 
-  <script>
-    function updateTime() {
-      const now = new Date();
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      const currentDate = now.toLocaleDateString('en-US', options);
-      const currentTime = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' });
-      document.getElementById('currentTime').textContent = `${currentDate}, ${currentTime}`;
-    }
-
-    // Update the time immediately on page load
-    updateTime();
-
-    // Update the time every second
-    setInterval(updateTime, 1000);
-  </script>
   <script>
     const attendanceForm = document.getElementById("attendance-form");
     attendanceForm.addEventListener("submit", async (e) => {

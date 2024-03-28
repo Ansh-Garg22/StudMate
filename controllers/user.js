@@ -3,34 +3,34 @@ const User = require("../models/user");
 const { setUser } = require("../service/auth");
 // const Semester = require("../models/semester");
 const Subject=require("../models/subject");
-
 async function handleUserSignup(req, res) {
   const { name, email, rollNo, password, semester } = req.body;
 
   try {
     // Find or create the semester
-    const found_subjects = await Subject.find({ semester: semester });
- 
-    if (!found_subjects.length) {
+    const foundSubjects = await Subject.find({ semester: semester });
+
+    if (!foundSubjects.length) {
       return res.status(404).json({ success: false, error: "No subjects found for the semester" });
     }
 
     // Create initial attendance records for each subject
-    const attendance = found_subjects.map((subject) => ({
+    const attendance = foundSubjects.map((subject) => ({
       subject: subject._id,
       presentCount: 0, // Initialize present count to 0
       absentCount: 0, // Initialize absent count to 0
+      records: [], // Initialize records array as empty
     }));
 
     // Create the user with the provided details, semester, and attendance records
-    await User.create({
+    const newUser = await User.create({
       name,
       email,
       rollNo,
       password,
-      semester: semester, // Assign semester directly
-      attendance: attendance,
-      subjects: found_subjects.map(subject => subject._id) // Store only subject IDs
+      semester,
+      subjects: foundSubjects.map((subject) => subject._id), // Store only subject IDs
+      attendance,
     });
 
     return res.redirect("/login");

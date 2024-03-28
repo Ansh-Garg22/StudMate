@@ -17,6 +17,7 @@ router.get("/signup", (req, res) => {
 router.get("/login", (req, res) => {
   return res.render("logsi");
 });
+
 router.get("/logout", logoutfunc);
 router.get("/feedback", restrictToLoggedinUserOnly, (req, res) => {
   return res.render("feedback");

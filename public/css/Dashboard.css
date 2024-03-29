@@ -92,12 +92,12 @@ a {
   width: 90%;
   min-height: 165px;
   border-radius: 20px;
-  /* margin: 25px 0px 0px 72px; */
   margin-inline: 25px;
   margin-block: 25px;
   background-color: #3958e2d6;
   color: white;
-  justify-content: space-around;
+  
+  justify-content: space-between;
 }
 .grad {
   margin: 20px 0 0 0;
@@ -242,7 +242,7 @@ a {
   margin: 26px 0 0.5rem 67px;
 }
 button {
-  width: 50%;
+  width: 25%;
   height: 25%;
   border-radius: 12px;
   background-color: #ff9501;
@@ -250,6 +250,9 @@ button {
   font-size: 16px;
   margin: 10px 0 0 0px;
   cursor: pointer;
+}
+.delete-record{
+  width: 20%;
 }
 .a12 {
   margin: 35px 50px 0 0;
@@ -269,7 +272,16 @@ button {
   width: 100%;
   min-height: 60vh;
 }
-
+.mark-attendance {
+  margin: 25px;
+  border-radius: 3px;
+  width: 100%;
+}
+.records{
+  margin: 25px;
+  border-radius: 3px;
+  width: 100%;
+}
 .attendance h2 {
   font-size: 1.65rem;
   font-weight: bold;

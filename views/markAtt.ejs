@@ -98,13 +98,16 @@
           <button type="submit">Mark Attendance</button>
         </form>
       </div>
+      <div class="records" >
+        <h3>Attendance Records:</h3>
+        <ul>
+          <% subject.records.forEach(record => { %>
+          <li><%= record.date.toLocaleDateString() %> - <%= record.present ? 'Present' : 'Absent' %></li>
+          <% }) %>
+        </ul>
+      </div>
     </div>
-    <h3>Attendance Records:</h3>
-    <ul>
-      <% subject.records.forEach(record => { %>
-      <li><%= record.date.toLocaleDateString() %> - <%= record.present ? 'Present' : 'Absent' %></li>
-      <% }) %>
-    </ul>
+    
 
 
 

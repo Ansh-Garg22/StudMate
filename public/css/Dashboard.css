@@ -13,7 +13,7 @@ body {
 }
 .container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #e6ebf9;
   width: 100%;
 }
@@ -25,8 +25,8 @@ body {
   position: relative;
   top: 0;
   bottom: 0;
-  min-height: 100vh;
   left: 0;
+  height: auto;
   background: #fff;
   width: 15%;
   overflow: hidden;
@@ -56,7 +56,7 @@ a {
   width: 224px;
   height: 50px;
   padding: 8px;
-  margin-left: 6px;
+  /* margin-left: 6px; */
 }
 .nav .fas {
   position: relative;
@@ -96,7 +96,7 @@ a {
   margin-block: 25px;
   background-color: #3958e2d6;
   color: white;
-  
+
   justify-content: space-between;
 }
 .grad {
@@ -119,7 +119,7 @@ a {
 }
 
 #h21 {
-  margin-bottom: 1.3rem;                                          
+  margin-bottom: 1.3rem;
   margin-right: 1000px;
   font-size: 1.3rem;
   color: #413d3d;
@@ -251,7 +251,7 @@ button {
   margin: 10px 0 0 0px;
   cursor: pointer;
 }
-.delete-record{
+.delete-record {
   width: 20%;
 }
 .a12 {
@@ -277,7 +277,7 @@ button {
   border-radius: 3px;
   width: 100%;
 }
-.records{
+.records {
   margin: 25px;
   border-radius: 3px;
   width: 100%;
@@ -293,26 +293,25 @@ button {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
+  transition: 0.3s ease;
 }
 
 .eg {
   /* flex: 0 0 auto; */
   min-width: 200px;
   background-color: #fff;
-  padding: 0rem;
+  padding: 10px;
   border-radius: 12px;
   transition: box-shadow 0.2s ease;
   min-height: 230px;
+  transition: 0.3s ease;
 }
 
 .subjects > div:hover {
-  transform: scale(1.03);
-  border: 3px solid burlywood;
-}
-
-.subjects > div:first-child:hover {
-  transform: scale(1.03);
-  border: 3px solid rgb(163, 52, 218); /* Blue border color */
+  /* transform: scale(1.0); */
+  border: 3px solid rgba(163, 52, 218, 0.795); /* Blue border color */
+  transition: 0.3s ease;
 }
 
 .imgbox2 {
@@ -320,8 +319,8 @@ button {
 }
 
 .subjects > div:hover {
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.97);
-  transition: box-shadow 0.2s ease;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.637);
+  transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -357,6 +356,6 @@ button {
 
 .subjects > div small {
   display: block;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   color: #708db0;
 }

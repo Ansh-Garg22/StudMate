@@ -25,7 +25,7 @@ const io = socketIo(server); // Attach Socket.IO to the HTTP server
 const PORT = 3000;
 
 //mongo
-connectToMongoDb("mongodb://127.0.0.1:27017/studease").then(() =>
+connectToMongoDb("mongodb+srv://Bandar:bandar0123@cluster0.txh1lwj.mongodb.net/studease?retryWrites=true&w=majority&appName=Cluster0").then(() =>
   console.log("Mongodb connected")
 );
 

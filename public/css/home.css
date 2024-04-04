@@ -1,61 +1,79 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+
 * {
-  font-family: "Poppins", sans-serif;
-
-  pad: 0;
-  margin: 0;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins';
 }
 
-.topheader {
-  display: flex;
-  justify-content: space-between;
-  margin-inline: 10px;
-  color: black;
-  padding: 10px;
-}
 
-.leftside ul,
-.rightside ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
 
-.leftside li,
-.rightside li {
-  margin-right: 30px;
-}
-.content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-inline: 20px;
-}
-
-ul.list {
-  list-style-type: none;
-  display: flex;
-  font-size: 20px;
-  justify-content: space-between;
-  align-items: center;
-  margin-inline: 0;
-}
-
-ul.list li {
-  margin-inline: 10px;
-}
-
-li:hover {
+h1 span:nth-child(n+1):nth-child(-n+4) {
   color: blue;
-  cursor: pointer;
-  border-bottom: 3px solid black;
-  transition: 0.1s ease;
+}
+h1 span:nth-child(n+5):nth-child(-n+8) {
+  color: orange;
 }
 
-i{
-  margin-right: 10px;
+#nav-bar {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 70px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.548);
+  box-shadow: rgba(38, 45, 118, 0.08) 0px 10px 60px;
+  
+  width: 100%;
+}
+
+#navbar2 {
+  display: flex;
+  justify-content: space-evenly;
+  width: 500.25px;
+  padding-right: 20px;
+}
+
+#navbar3 {
+  display: flex;
+  justify-content: space-evenly;
+  width: 320px;
+}
+
+.navbar2-feature {
+  list-style: none;
+}
+
+.navbar2-feature a {
+  text-decoration: none;
+  color: rgb(94, 44, 237);
+  font-size: 24px;
+  font-weight: 500; 
+}
+
+.navbar3-feature {
+  list-style: none;
+}
+
+.navbar3-feature a {
+  text-decoration: none;
+  color: rgb(94, 44, 237);
+  font-size: 18px;
+  font-weight: 500; 
+}
+
+#nav3-a2 {
+  border: 2px solid rgb(94, 44, 237);
+  padding: 10px 30px 10px 30px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+#nav3-a1 {
+  padding-right: 30px;
 }
 
 .paint {
@@ -66,26 +84,7 @@ i{
   border-bottom-right-radius: 15%;
 }
 
-.button-21 {
-  background-color: #3EB2FD;
-  background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
-  border-radius: 100px;
-  border-width: 0;
-  box-shadow: none;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-family: CircularStd,sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  padding: 6px 20px;
-  transition: background-color .2s,background-position .2s;
-  margin-right: 15px;
-}
 
-.button-21:hover {
-  background-position: -20px -20px;
-}
 
 .middlecontent {
   margin-inline: 20px;
@@ -95,7 +94,7 @@ i{
 }
 
 .right p {
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 700;
 }
 
@@ -105,14 +104,14 @@ i{
 
 
 h3 {
-  font-size: 26px;
+  font-size: 21px;
   font-weight: 600;
   color: rgb(47, 50, 125);
   position: relative;
 }
 
 p {
-  font-size: 16px;
+  font-size: 13px;
   color: rgb(105, 105, 132);
   font-weight: 500;
 }
@@ -238,6 +237,206 @@ li{
   background-color: blue;
 }
 
+/* review */
+.checked {
+  color: orange;
+}
+
+
+.container2{
+    position: relative;
+    left: 200px;
+    bottom: 30px;
+    width: 800px;
+    min-width: 350px;
+    min-height: 250px;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+
+.wrapper{
+    width: 300%;
+    /* 300% 'caz we have 3 cards */
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: 1s;
+}
+
+.card{
+    width: 800px;
+    min-height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0 10px;
+}
+
+.card-thumb{
+    width: 70%;
+    height: 250px;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+}
+
+.client-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.client-name{
+    position: absolute;
+    bottom: 130px;
+    color: #44107a;
+    font-size: 18px;
+}
+
+.client-position{
+  position: absolute;
+  bottom: 110px;
+  font-size: 14px;
+}
+
+.card-body{
+    width: 120%;
+    min-height: 100%;
+    height: auto;
+    margin-left: 20px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.review{
+    position: absolute;
+    font-size: 15px;
+    line-height: 30px;
+    margin-top: 17px;
+}
+
+.rating{
+    position: absolute;
+    bottom: 80px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-star {
+  font-size: 20px; 
+}
 
 
 
+.indicators{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.indicators button{
+    background: none;
+    border: none;
+    outline: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #060404;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: .5s;
+}
+
+button.active{
+    width: 40px;
+    border-radius: 50px;
+    background: #fff;
+}
+
+@media (max-width: 800px){
+    .container2{
+        width: 50%;
+        margin: auto;
+    }
+    .card{
+        flex-direction: column;
+    }
+    .card-thumb{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .card-body{
+        width: 100%;
+        min-height: auto;
+        margin-left: 0;
+    }
+}
+
+/* footer   */
+
+  footer {
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 20px;
+    background: #0a1535;
+    color: #f9f9f9;
+  }
+  
+  footer section {
+    padding: 0 50px;
+  }
+  
+  section.top {
+    padding-top: 30px;
+    margin-bottom: 48px;
+  }
+  
+  section .icons{
+    font-size: 22px;
+    height: 30px;
+  }
+
+  .group1{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  section.top h2 {
+    display: block;
+    height: 30px;
+    margin: 0 0 30px;
+  }
+  
+  section.top ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  
+  section.top ul li a {
+    display: block;
+    margin-bottom: 10px;
+    color: rgb(255 255 255 / 90%);
+  }
+  
+  section.top h3 {
+    color: rgb(255 255 255 / 40%);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  

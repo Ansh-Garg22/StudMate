@@ -27,6 +27,9 @@ router.get("/chatlogin", (req, res) => {
 router.get("/contact", (req, res) => {
   return res.render("contactus");
 });
+router.get("/team", (req, res) => {
+  return res.render("team");
+});
 
 router.get("/logout", logoutfunc);
 router.get("/chatlogout", chatlogout.chatlogoutfunc);

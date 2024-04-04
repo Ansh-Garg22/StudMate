@@ -56,7 +56,6 @@ app.post("/subjects", handleSubjectCreation);
 //   res.end("hello about is running :)");
 // });
 // Routes
-app.use("/socket.io", express.static(path.join(__dirname, "node_modules", "socket.io", "client-dist")));
 
 app.use("/chatroom", authRoutes);
 app.get("/chatting", restrictToLoggedinUserOnly, roomController.renderChatRoom);

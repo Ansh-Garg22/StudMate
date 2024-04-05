@@ -8,7 +8,7 @@
 }
 
 body {
-  background: #eaeaea;
+  background: white;
 }
 
 h1 span:nth-child(n + 1):nth-child(-n + 4) {
@@ -79,53 +79,86 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
 .container {
   position: absolute;
   top: 68%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-  width: 370px;
-  height: 470px;
-  background: #f5f5f5;
+  left: 50%;
+  transform: translate(-50%, -52.5%);
+  width: 345px;
+  height: 460px;
+  background:white;
   box-shadow: 0 20px 25px #dbdbdb;
+  border-radius: 30px;
+  border: 1px solid rgb(219, 215, 215);
+
+}
+
+.slide
+{
+  border-radius: 10px;
 }
 
 .container .slide .item {
-  width: 290px;
-  height: 350px;
+  width: 267px;
+  height: 360px;
+  
   position: absolute;
   top: 55%;
-  transform: translate(0, -50%);
-  border-radius: 20px;
+  transform: translate(0, -42.5%);
+  border-radius: 30px;
   box-shadow: 0 20px 25px #505050;
   background-position: 50% 50%;
   background-size: cover;
   display: inline-block;
-  transition: 0.5s;
+  transition: 0.85s ease ;
+  /* border: 2px solid rgb(219, 215, 215); */
 
+
+  
+  border-radius: 10px;
   margin-bottom: 40px;
 }
 
-.slide .item:nth-child(1),
-.slide .item:nth-child(2) {
+.slide .item:nth-child(1)
+ {
   top: 0;
-  left: 0;
+  left: 0%;
   transform: translate(0, 0);
   border-radius: 0;
   width: 100%;
   height: 100%;
+  z-index: 3;
+}
+
+.slide .item:nth-child(2) {
+  /* right: calc(50% + 440px);
+  z-index: 1; */
+
+
+    left: 98%;
+  z-index: 2;
 }
 
 .slide .item:nth-child(3) {
-  left: 100%;
+  /* left: 101%;
+  z-index: 3; */
+
+    right: calc(43% + 440px);
+  z-index: 1;
+
 }
 .slide .item:nth-child(4) {
-  left: calc(100% + 220px);
+  left: calc(99.9% + 250px);
+  z-index: 1;
+
 }
 .slide .item:nth-child(5) {
-  left: calc(100% + 440px);
+  right: calc(-32% + 440px);
+  z-index: 2;
 }
 
 /* here n = 0, 1, 2, 3,... */
 .slide .item:nth-child(n + 6) {
-  left: calc(90% + 660px);
+  /* left: calc(90% + 660px); */
+  /* right: calc(90% + 660px); */
+
   opacity: 0;
 }
 
@@ -175,6 +208,8 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
   text-align: center;
   position: absolute;
   bottom: 6px;
+  z-index: 5;
+
 }
 
 .button button {
@@ -205,9 +240,11 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
   } */
 
 .outer-container {
-  padding: 0px 0 0 0;
-  background-color: rgb(234, 234, 247);
+  padding: 0px 10px 0 10px;
+  background-color: rgb(253, 253, 253);
   height: 100vh;
+
+
 }
 
 .inner-container {
@@ -275,10 +312,10 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
 
 .img-wrapper {
   width: 100%;
-  padding-top: 46.25%; /* Aspect ratio for responsive height (16:9) */
-  background-color: rgb(181, 209, 255);
-  border-radius: 0 0 60% 10%; /* Adjusted border radius for responsiveness */
-  margin-bottom: 2%; /* Responsive margin */
+  padding-top: 56.25%; /* Aspect ratio for responsive height (16:9) */
+  background-color:white;
+  border-radius: 0 0 0% 0%; /* Adjusted border radius for responsiveness */
+  margin-bottom: 0%; /* Responsive margin */
   position: relative; /* Position for absolutely positioned elements inside */
 }
 
@@ -292,7 +329,7 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
   max-width: 500px; /* Maximum width for larger screens */
   min-height: 300px;
   margin: auto; /* Center align */
-  background-color: rgb(243, 235, 224);
+  background-color: white;
   overflow: hidden; /* Ensure content doesn't overflow */
   position: relative; /* Position for absolutely positioned elements inside */
 }
@@ -303,15 +340,17 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
 }
 
 .team-img {
-  width: 40%;
-  height: 80%; /* Responsive max-width */
+  width: 55%;
+  padding: 0.5%;
+  border: 3.5px solid rgb(154, 9, 184);;
+  height: 90%; /* Responsive max-width */
   /* Allow height to adjust with width */
   border-radius: 50%;
-  margin: 10px; /* Adjust margin for smaller screens */
+  margin: 15px 15px 0px 15px; /* Adjust margin for smaller screens */
   object-fit: cover;
   position: absolute; /* Position within .img-wrapper */
   top: 40%; /* Position at the center vertically */
-  left: 20%; /* Position at the center horizontally */
+  left: 45%; /* Position at the center horizontally */
   transform: translate(-50%, -50%); /* Center align the image */
 }
 

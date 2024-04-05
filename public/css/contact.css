@@ -3,11 +3,13 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: "Poppins";
+
   }
   html,
   body {
     height: 100%;
     margin: 0;
+    background-color: #DFF5FF;
   }
 
   body {
@@ -85,6 +87,8 @@
     display: flex;
     justify-content: space-evenly;
     padding: 215px 0px 120px 0px;
+    margin-inline: 70px ;
+    
   }
 
   #left {

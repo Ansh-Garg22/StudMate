@@ -25,7 +25,6 @@
         background-color: rgba(255, 255, 255, 0.705);
         box-shadow: rgba(38, 45, 118, 0.08) 0px 10px 60px;
       
-        width: 100%;
       }
       
       #navbar2 {
@@ -84,6 +83,32 @@
         border-radius: 4px;
         margin: 30px auto;
         background-color: white;
+      }
+       
+      .search-container{
+        display: flex;
+      }
+      input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        width: 300px;
+      }
+      
+       .search-container button {
+        float: right;
+        padding: 6px 10px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+      }
+      
+       .search-container button:hover {
+        background: #ccc;
       }
       .right {
         width: 70%;
@@ -174,7 +199,7 @@
         margin-top: 15px;
         margin-inline-start: 8px;
       }
-      i {
+      .input-container i {
         font-size: 2rem;
         margin-top: 15px;
         margin-left: 20px;
@@ -190,12 +215,13 @@
         height: 50px;
         margin-left: 30px;
       }
-      input {
+      .input-container input {
         font-size: 1.2rem;
         padding: 5px;
         width: 650px;
         border-radius: 4px;
         margin-top: 15px;
+        border: 1px solid black;
       }
       .input-container {
         display: flex;
@@ -207,3 +233,61 @@
         right: 0;
         padding: 10px;
       }
+
+      
+footer {
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 20px;
+  background: #0a1535;
+  color: #f9f9f9;
+}
+
+footer section {
+  padding: 0 50px;
+}
+
+section.top {
+  padding-top: 30px;
+  margin-bottom: 48px;
+}
+
+section .icons {
+  font-size: 22px;
+  height: 30px;
+}
+
+.group1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.top h2 {
+  display: block;
+  height: 30px;
+  margin: 0 0 30px;
+}
+
+section.top ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+section.top ul li a {
+  display: block;
+  margin-bottom: 10px;
+  color: rgb(255 255 255 / 90%);
+}
+
+section.top h3 {
+  color: rgb(255 255 255 / 40%);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}

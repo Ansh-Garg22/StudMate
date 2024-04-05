@@ -226,7 +226,7 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
   font-weight: 900;
   line-height: 30px;
   color: white;
-  margin: 0px 0px 25px 450px;
+  text-align: center;
   font-size: 50px;
 }
 
@@ -334,6 +334,7 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
     font-size: 1.2rem; /* Responsive font size */
   }
 
+  
   .team-img {
     width: 50%; /* Adjust image width for smaller screens */
     max-width: 150px; /* Adjust max-width for smaller screens */

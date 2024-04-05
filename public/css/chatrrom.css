@@ -121,6 +121,7 @@
         max-height: 400px;
         overflow-y: auto;
         padding-inline: 20px;
+        
       }
       #messages::-webkit-scrollbar {
         display: none;

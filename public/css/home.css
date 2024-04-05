@@ -36,7 +36,7 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
 #navbar3 {
   display: flex;
   justify-content: space-evenly;
-  width:320px;
+  width: 320px;
 }
 
 .navbar2-feature {
@@ -97,7 +97,7 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
   width: 530px;
   margin-top: 50px;
 }
-.logbtn{
+.logbtn {
   margin-top: 35px;
 }
 h3 {
@@ -141,7 +141,7 @@ button:hover {
   box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
   background-color: rgb(48, 20, 227);
 }
-.reviewhead{
+.reviewhead {
   text-align: center;
   font-size: 1.9rem;
   font-weight: 700;
@@ -274,14 +274,12 @@ li {
 }
 
 .container2 {
-  position: relative;
-  left: 200px;
-  bottom: 30px;
   width: 800px;
   min-width: 350px;
   min-height: 250px;
   padding-bottom: 40px;
   overflow: hidden;
+  margin-inline: 280px;
 }
 
 .wrapper {
@@ -360,10 +358,8 @@ li {
 }
 
 .indicators {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-inline: 300px;
+  margin-block-start: 30px;
 }
 
 .indicators button {

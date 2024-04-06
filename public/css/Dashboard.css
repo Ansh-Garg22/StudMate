@@ -30,7 +30,16 @@ input[type="radio"] + label {
   margin: 30px 20px 10px 0;
 
 }
+#trueRadioButton:hover+label {
+  background-color: rgb(17, 194, 47);
+  color: white;
+}
 
+#falseRadioButton:hover +label{
+  background-color: rgb(240, 49, 38);
+  color: white;
+
+}
 
 
 #trueRadioButton+ label::after {
@@ -69,13 +78,13 @@ input[type="radio"] + label {
 }
 
 .records table {
-  width: 100%;
+  width: 95%;
   border-collapse: collapse;
 }
 
 .records th,
 .records td {
-  border: 1px solid #2344b0;
+  border: 1.5px solid #2344b0;
   padding: 8px;
   text-align: left;
 }
@@ -360,7 +369,8 @@ button {
 
 /* Attendance Section */
 .attendance {
-  margin: 25px;
+  margin-block: 25px;
+  margin-inline: 18px;
   border-radius: 3px;
   width: 100%;
   min-height: 60vh;
@@ -371,7 +381,8 @@ button {
   width: 100%;
 }
 .records {
-  margin: 25px;
+  margin-block: 25px;
+  margin-inline: 18px;
   border-radius: 3px;
   width: 100%;
 }
@@ -392,13 +403,14 @@ button {
 
 .eg {
   /* flex: 0 0 auto; */
-  min-width: 200px;
+  max-width: 230px;
   background-color: #fff;
-  padding: 10px;
+  padding: 5px;
   border-radius: 12px;
   transition: box-shadow 0.2s ease;
   min-height: 230px;
   transition: 0.3s ease;
+  height: 250px;
 }
 
 .subjects > div:hover {

@@ -80,9 +80,9 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
   position: absolute;
   top: 68%;
   left: 50%;
-  transform: translate(-50%, -52.5%);
-  width: 345px;
-  height: 460px;
+  transform: translate(-50%, -51.5%);
+  width: 340px;
+  height: 430px;
   background:white;
   box-shadow: 0 20px 25px #dbdbdb;
   border-radius: 30px;
@@ -101,7 +101,7 @@ h1 span:nth-child(n + 5):nth-child(-n + 8) {
   
   position: absolute;
   top: 55%;
-  transform: translate(0, -42.5%);
+  transform: translate(0, -45.5%);
   border-radius: 30px;
   box-shadow: 0 20px 25px #505050;
   background-position: 50% 50%;

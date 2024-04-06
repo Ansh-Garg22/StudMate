@@ -81,6 +81,8 @@
 
 
 
+    
+
 
     <div class="left">
       <div class="mark-attendance">
@@ -88,30 +90,49 @@
         </h2>
         <form id="attendance-form">
           <input type="hidden" name="subjectId" value="<%= subject._id %>" />
-          <label>
-            <input type="radio" name="isPresent" value="true" required /> Present
-          </label>
-          <label>
-            <input type="radio" name="isPresent" value="false" required /> Absent
-          </label>
+
+
+
+          
+            <input type="radio" name="isPresent"  id="trueRadioButton" value="true" required /> 
+            <label for="trueRadioButton" id="trueLabel"></label>
+
+
+            <input type="radio" name="isPresent"  id="falseRadioButton" value="false" required /> 
+            <label for="falseRadioButton" id="falseLabel"></label>
+
+
+
           <br />
-          <button type="submit">Mark Attendance</button>
+          <button type="submit" class="subbtn">MARK ATTENDANCE</button>
         </form>
       </div>
       <div class="records">
         <h3>Attendance Records:</h3>
-        <ul>
-          <% subject.records.forEach(record => { %>
-          <li>
-            <%= record.date.toLocaleDateString() %> - <%= record.present ? 'Present'
-            : 'Absent' %>
-            <button class="delete-record" data-record-id="<%= record._id %>">
-              Delete
-            </button>
-          </li>
-          <% }) %>
-        </ul>
-      </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% subject.records.forEach(record => { %>
+                <tr>
+                    <td><%= record.date.toLocaleDateString() %></td>
+                    <td><%= record.present ? 'Present' : 'Absent' %></td>
+                    <td>
+                        <button class="delete-record" data-record-id="<%= record._id %>">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    
     </div>
     
 

@@ -35,7 +35,7 @@ exports.submitFeedback = async (req, res) => {
 
   try {
     await sendMail(transporter, mailOptions);
-    res.send("Feedback submitted successfully!");
+    res.send("<script>window.onload = () => { clearForm(); }</script>Feedback submitted successfully!");
   } catch (error) {
     console.error(error);
     res.status(500).send("Error submitting feedback");

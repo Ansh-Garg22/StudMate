@@ -85,9 +85,9 @@
 
   #content {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 215px 0px 120px 0px;
-    margin-inline: 70px ;
+    margin-inline: 35px ;
     
   }
 

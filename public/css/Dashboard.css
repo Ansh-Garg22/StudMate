@@ -456,3 +456,146 @@ button {
   margin-top: 0.5rem;
   color: #708db0;
 }
+
+
+
+
+
+
+.profile {
+  width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.profile h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.profile p {
+  margin: 12px 0;
+  color: #666;
+}
+
+.profile .details {
+  margin-bottom: 40px;
+}
+
+.profile .details p {
+  font-size: 16px;
+}
+
+.profile .details p strong {
+  font-weight: bold;
+  color: #333;
+  margin-right: 4px;
+}
+
+.profile .details p span {
+  color: #777;
+}
+
+.profile h2 {
+  color: #333;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.profile table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.profile th, .profile td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+.profile td {
+  background-color: #fafafa;
+  color: #666;
+}
+
+.profile strong {
+  font-weight: bold;
+  color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+.edit {
+  width: 750px;
+  margin: 100px 0 0 240px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  height: 450px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.edit h1 {
+  text-align: center;
+  color: #333;
+}
+
+.edit form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit label {
+  margin-top: 10px;
+  color: #333;
+  font-weight: 600;
+}
+
+.edit input[type="text"],
+.edit input[type="email"] {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.edit input[type="text"]:focus,
+.edit input[type="email"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.edit button[type="submit"] {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.edit button[type="submit"]:hover {
+  background-color: #2980b9;
+}

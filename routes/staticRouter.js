@@ -9,13 +9,19 @@ const {
 
 const renderDashboard = require("../controllers/Dashboard");
 
+// Route to get student details
 const router = express.Router();
 
 router.get("/",renderDashboard);
+
+
 router.get("/signup", (req, res) => {
   return res.render("logsi");
 });
 
+router.get("/login", (req, res) => {
+  return res.render("logsi");
+});
 router.get("/login", (req, res) => {
   return res.render("logsi");
 });

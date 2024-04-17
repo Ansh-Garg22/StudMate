@@ -15,6 +15,7 @@ async function renderDashboard(req, res) {
 
     // Extract the required data from the user object
     const userData = {
+      userId,
       name: user.name,
       subjects: user.attendance.map((attendance) => ({
         _id: attendance.subject._id, // Add the _id property

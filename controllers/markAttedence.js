@@ -30,6 +30,7 @@ const renderMarkAttendance = async (req, res) => {
 
     // Render the markAttendance.ejs file with the subject details and attendance records
     res.render('markAtt', {
+      userId,
       subject: {
         _id: subject._id,
         name: subject.name,

@@ -10,6 +10,8 @@ const cookieParser = require("cookie-parser");
 const User =require("./models/user");
 const userRoute = require("./routes/user");
 const staticRoute = require("./routes/staticRouter");
+const studentRoute = require("./routes/editd");
+
 const feedRoute = require("./routes/feedRoute");
 const { checkAuth, restrictToLoggedinUserOnly } = require("./middlewares/auth");
 const { handleSubjectCreation } = require("./controllers/subject");
@@ -40,6 +42,7 @@ app.use(cookieParser());
 app.use("/feedback-s", feedRoute);
 app.use("/user", userRoute);
 app.use("/", checkAuth, staticRoute);
+app.use("/students",checkAuth, studentRoute);
 
 app.use(express.static("public"));
 //routes

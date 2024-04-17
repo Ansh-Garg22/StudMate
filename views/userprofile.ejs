@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Details</title>
+  </head>
+  <body>
+    <h1>Student Details</h1>
+    <p><strong>Name:</strong> <%= user.name %></p>
+    <p><strong>Email:</strong> <%= user.email %></p>
+    <p><strong>Roll No:</strong> <%= user.rollNo %></p>
+    <p><strong>Semester:</strong> <%= user.semester %></p>
+    <p><strong>Alumni:</strong> <%= user.isAlumni ? 'Yes' : 'No' %></p>
+
+    <h2>Subjects</h2>
+    <ul>
+        <% user.subjects.forEach(subject => { %>
+        <li>
+          <p><strong>Name:</strong> <%= subject.name %></p>
+          <p><strong>Code:</strong> <%= subject.code %></p>
+        </li>
+        <% }) %>
+      </ul>
+
+    
+  </body>
+</html>

@@ -11,6 +11,7 @@ const User =require("./models/user");
 const userRoute = require("./routes/user");
 const staticRoute = require("./routes/staticRouter");
 const studentRoute = require("./routes/editd");
+const forgotPasswordRoutes = require('./routes/forgot');
 
 const feedRoute = require("./routes/feedRoute");
 const { checkAuth, restrictToLoggedinUserOnly } = require("./middlewares/auth");
@@ -67,7 +68,7 @@ app.get(
   restrictToLoggedinUserOnly,
   messageController.getMessages
 );
-
+app.use('/forget-pass', forgotPasswordRoutes);
 
 //PORT
 server.listen(PORT, () => {

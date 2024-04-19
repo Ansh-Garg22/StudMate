@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forgot Password</title>
+  <style>
+    /* CSS styles remain the same */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Forgot Password</h2>
+    <form id="forgot-password-form">
+      <button type="submit">Forgot Password</button>
+    </form>
+
+    <form id="enter-email-form" style="display: none;">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Send OTP</button>
+    </form>
+
+    <form id="verify-otp-form" style="display: none;">
+      <label for="otp">OTP:</label>
+      <input type="text" id="otp" name="otp" required>
+      <button type="submit">Verify OTP</button>
+    </form>
+  </div>
+
+  <script>
+    const forgotPasswordForm = document.getElementById('forgot-password-form');
+    const enterEmailForm = document.getElementById('enter-email-form');
+    const verifyOtpForm = document.getElementById('verify-otp-form');
+
+    forgotPasswordForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      forgotPasswordForm.style.display = 'none';
+      enterEmailForm.style.display = 'block';
+    });
+
+    enterEmailForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+
+      fetch('/forget-pass/send-otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data);
+        enterEmailForm.style.display = 'none';
+        verifyOtpForm.style.display = 'block';
+      })
+      .catch(error => console.error(error));
+    });
+
+    verifyOtpForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const otp = document.getElementById('otp').value;
+
+      fetch('/forget-pass/verify-otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, otp })
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.text();
+        } else {
+          throw new Error('Invalid OTP');
+        }
+      })
+      .then(data => {
+        // Render the reset-password.ejs template
+        verifyOtpForm.style.display = 'none';
+
+        const resetPasswordForm = document.createElement('div');
+        resetPasswordForm.innerHTML = data;
+        document.body.appendChild(resetPasswordForm);
+      })
+      .catch(error => console.error(error));
+    });
+  </script>
+</body>
+</html>

@@ -8,8 +8,8 @@ exports.submitFeedback = async (req, res) => {
     port: 587,
     secure: false,
     auth: {
-      user: "studease012@gmail.com",
-      pass: "vkziulynxnsafciy",
+      user: process.env.USER,
+      pass: process.env.PASS,
     },
   });
 

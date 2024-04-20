@@ -12,23 +12,22 @@ const userRoute = require("./routes/user");
 const staticRoute = require("./routes/staticRouter");
 const studentRoute = require("./routes/editd");
 const forgotPasswordRoutes = require('./routes/forgot');
-
 const feedRoute = require("./routes/feedRoute");
 const { checkAuth, restrictToLoggedinUserOnly } = require("./middlewares/auth");
 const { handleSubjectCreation } = require("./controllers/subject");
 const { connectToMongoDb } = require("./connect");
 const markAttendanceRoute = require("./routes/markatt");
 //io server
+const dotenv = require('dotenv');
 const app = express();
-
+dotenv.config();
 const server = http.createServer(app);
 const io = socketIo(server); // Attach Socket.IO to the HTTP server
 
 //variables
-const PORT = 3000;
 
 //mongo
-connectToMongoDb("mongodb+srv://Bandar:bandar0123@cluster0.txh1lwj.mongodb.net/studease?retryWrites=true&w=majority&appName=Cluster0").then(() =>
+connectToMongoDb(process.env.MONGOURL).then(() =>
   console.log("Mongodb connected")
 );
 
@@ -71,8 +70,8 @@ app.get(
 app.use('/forget-pass', forgotPasswordRoutes);
 
 //PORT
-server.listen(PORT, () => {
-  console.log(`Server started at Port ${PORT}`);
+server.listen(process.env.PORT, () => {
+  console.log(`Server started at Port ${process.env.PORT}`);
 });
 //chat application
 

@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forgot Password</title>
+  <title>Reset Password</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <div class="container">
     <div class="content">
-      <h1>Forgot Password</h1>
-      <p>Enter your email and we'll send you a link to reset your password.</p>
-      <form action="/forget-pass/send-otp" method="POST">
+      <h1>Reset Password</h1>
+      <p>Enter your new password to reset your account password.</p>
+      <form action="/forget-pass/reset-password" method="POST">
         <div class="email-input">
           <img src="/css/images/emailpng.png" alt="Email Icon">
-          <input type="email" placeholder="abc@gmail.com" name="email" required>
+          <input type="email" placeholder="abc@gmail.com" name="email" value="<%= email %>" readonly>
+        </div>
+        <div class="email-input">
+          <input type="password" placeholder="Enter new password" name="newPassword" required>
         </div>
         <% if (typeof error !== 'undefined') { %>
           <p class="error-message"><%= error %></p>
         <% } %>
-        <button class="submit-btn" type="submit">Submit</button>
+        <% if (typeof success !== 'undefined') { %>
+          <p class="success-message"><%= success %></p>
+        <% } %>
+        <button class="submit-btn" type="submit">Reset Password</button>
         <a href="/login" class="back-link">Back to Login</a>
       </form>
     </div>

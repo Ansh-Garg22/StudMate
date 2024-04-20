@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 40px;
+    max-width: 800px;
+}
+
+.content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.illustration {
+    flex: 1;
+    text-align: center;
+}
+
+.illustration img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 28px;
+    margin-top: 0;
+    color: #333;
+}
+
+p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.email-input ,.otp-input{
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+}
+
+.email-input img {
+    width: 30px;
+    height: 30px;
+    margin-right: 7px;
+}
+
+.email-input input,.otp-input input {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+}
+
+.error-message {
+    color: #ff4d4d;
+    margin-bottom: 20px;
+}
+.success-message{
+    color: #1db731;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.submit-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 8px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 15px;
+}
+
+.submit-btn:hover {
+    background-color: #389b3b;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    color: #000000;
+    font-weight: 700;
+}

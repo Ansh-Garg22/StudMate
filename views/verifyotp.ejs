@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forgot Password</title>
+  <title>Verify OTP</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <div class="container">
     <div class="content">
-      <h1>Forgot Password</h1>
-      <p>Enter your email and we'll send you a link to reset your password.</p>
-      <form action="/forget-pass/send-otp" method="POST">
+      <h1>Verify OTP</h1>
+      <p>Enter the OTP for verification. We have sent you an OTP.</p>
+      <form action="/forget-pass/verify-otp" method="POST">
         <div class="email-input">
           <img src="/css/images/emailpng.png" alt="Email Icon">
-          <input type="email" placeholder="abc@gmail.com" name="email" required>
+          <input type="email" placeholder="abc@gmail.com" name="email" value="<%= email %>" readonly>
+        </div>
+        <div class="otp-input">
+          <input type="text" placeholder="Enter OTP" name="otp" required>
         </div>
         <% if (typeof error !== 'undefined') { %>
           <p class="error-message"><%= error %></p>
         <% } %>
-        <button class="submit-btn" type="submit">Submit</button>
+        <button class="submit-btn" type="submit">Verify OTP</button>
         <a href="/login" class="back-link">Back to Login</a>
       </form>
     </div>

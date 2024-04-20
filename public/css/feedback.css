@@ -18,6 +18,11 @@ body {
   background-color: #e6ebf9;
   width: 100%;
 }
+#successMessage{
+  color: rgb(46, 199, 46);
+  font-weight: bold;
+  margin-top: 10px;
+}
 .named {
   padding-inline-start: 20px;
   padding-block-end: 10px;

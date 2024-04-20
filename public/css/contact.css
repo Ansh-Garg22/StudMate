@@ -87,7 +87,7 @@
     display: flex;
     justify-content: space-between;
     padding: 215px 0px 120px 0px;
-    margin-inline: 35px ;
+    margin-inline: 50px ;
   
   }
 
@@ -159,12 +159,13 @@
 
   #right {
     display: flex;
-    width: 800px;
+    width: 750px;
     flex-wrap: wrap;
+    text-align: center;
   }
 
   #name {
-    width: 375px;
+    width: 325px;
     height: 70.4px;
     padding: 10px 0px 10px 30px;
     border: none;
@@ -176,7 +177,7 @@
   }
 
   #email {
-    width: 375px;
+    width: 330px;
     height: 70.4px;
     padding: 10px 0px 10px 30px;
     border: none;
@@ -188,7 +189,7 @@
 
   #subject {
     margin-top: 50px;
-    width: 800px;
+    width: 700px;
     height: 70.4px;
     padding: 10px 0px 10px 30px;
     border: none;
@@ -200,7 +201,7 @@
 
   #message {
     margin-top: 50px;
-    width: 800px;
+    width: 700px;
     padding: 20px 0px 10px 30px;
     border: none;
     background-color: white;

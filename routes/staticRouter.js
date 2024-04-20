@@ -8,7 +8,6 @@ const {
 } = require("../middlewares/auth");
 
 const renderDashboard = require("../controllers/Dashboard");
-
 // Route to get student details
 const router = express.Router();
 
@@ -40,6 +39,8 @@ router.get("/team", (req, res) => {
 router.get("/logout", logoutfunc);
 router.get("/chatlogout", chatlogout.chatlogoutfunc);
 router.get("/feedback", restrictToLoggedinUserOnly, (req, res) => {
-  return res.render("feedback");
+  const userId = req.user._id;
+  // Render the feedback page and pass the user ID to it
+  return res.render("feedback", { userId: userId });
 });
 module.exports = router;

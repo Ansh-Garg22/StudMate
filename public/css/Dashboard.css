@@ -263,13 +263,9 @@ a {
   background-color: #f6f6f9;
   padding: 1px;
   transition: box-shadow 0.4s ease;
-  height: 50px;
+  min-height: 55px;
 }
 
-.right .leaves .teacher:hover {
-  transform: scale(1.07);
-  box-shadow: 10px 4px 8px rgba(0, 0, 0, 0.771); /* Add box shadow */
-}
 .leaves .teacher i {
   border-radius: 10px;
   background-color: rgb(204, 104, 104);
@@ -292,26 +288,24 @@ a {
 .l-bottom {
   width: 100%;
   height: 45%;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
+  margin-inline-start: 20px;
 }
 .ac {
-  height: 80%;
+  height: 90%;
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 0px;
   width: 95%;
-  margin-left: 16px;
+  gap: 3rem;
 }
 
 .ac1 {
-  width: 40%;
+  width: 300px;
   border-radius: 12px;
-  height: 75%;
-  margin-top: 10px;
+  height: 150px;
   background-color: rgb(255, 221, 181);
-  margin-bottom: 0px;
   display: flex;
   justify-content: space-between;
+  border: 4px solid #e6ebf9;
 }
 .ac1:hover {
   border: 4px solid #ffa322;
@@ -320,31 +314,44 @@ a {
   border: 4px solid #8038ec;
 }
 .ac2 {
-  width: 40%;
+  width: 300px;
   border-radius: 12px;
-  height: 75%;
-  margin-top: 10px;
+  height: 150px;
   margin-bottom: 0px;
   display: flex;
   justify-content: space-between;
+  border: 4px solid #e6ebf9;
+
   background-color: rgb(191, 144, 249);
 }
 
 .l-bottom h2 {
   font-size: 1.65rem;
   font-weight: bold;
-  margin: 26px 0 0.5rem 67px;
+  margin: 0px 0 1rem 4px;
 }
-button {
-  width: 25%;
-  height: 25%;
+.btns{
+  width: 100px;
+  height: 30px;
   border-radius: 12px;
   background-color: #ff9501;
   color: white;
   font-size: 16px;
-  margin: 10px 0 0 0px;
+  margin: 15px 0 0 12px;
   cursor: pointer;
 }
+
+button {
+  width: 250px;
+  height: 30px;
+  border-radius: 12px;
+  background-color: #ff9501;
+  color: white;
+  font-size: 16px;
+  margin: 15px 0 0 0px;
+  cursor: pointer;
+}
+
 .delete-record {
   width: 30%;
 }
@@ -365,7 +372,7 @@ button {
   margin-inline: 18px;
   border-radius: 3px;
   width: 100%;
-  min-height: 60vh;
+  min-height: 52vh;
 }
 .mark-attendance {
   margin: 25px;
@@ -381,8 +388,9 @@ button {
 .attendance h2 {
   font-size: 1.65rem;
   font-weight: bold;
-  margin-bottom: 0.88rem;
+  margin-bottom: 1rem;
   margin-top: 12px;
+  margin-inline-start: 5px;
 }
 
 .subjects {
@@ -397,8 +405,8 @@ button {
   /* flex: 0 0 auto; */
   max-width: 230px;
   background-color: #fff;
-  padding: 5px;
   border-radius: 12px;
+  border: 4px solid #e6ebf9;
   transition: box-shadow 0.2s ease;
   min-height: 230px;
   transition: 0.3s ease;
@@ -407,7 +415,7 @@ button {
 
 .subjects > div:hover {
   /* transform: scale(1.0); */
-  border: 3px solid rgba(163, 52, 218, 0.795); /* Blue border color */
+  border: 4px solid rgba(163, 52, 218, 0.795); /* Blue border color */
   transition: 0.3s ease;
 }
 
@@ -416,7 +424,6 @@ button {
 }
 
 .subjects > div:hover {
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.637);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -456,11 +463,6 @@ button {
   margin-top: 0.5rem;
   color: #708db0;
 }
-
-
-
-
-
 
 .profile {
   width: 800px;
@@ -513,7 +515,8 @@ button {
   margin-bottom: 20px;
 }
 
-.profile th, .profile td {
+.profile th,
+.profile td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -534,15 +537,6 @@ button {
   font-weight: bold;
   color: #333;
 }
-
-
-
-
-
-
-
-
-
 
 .edit {
   width: 750px;
